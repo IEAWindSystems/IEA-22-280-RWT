@@ -7,7 +7,7 @@ assembly:
   rotor_orientation: Upwind
   number_of_blades: 3
   hub_height: 170.0
-  rotor_diameter: 285.2060015019319
+  rotor_diameter: 284.
   rated_power: 22000000.0
   lifetime: 25.0
 components:
@@ -661,7 +661,7 @@ components:
       generator_mass_user: 508040.0
       distance_hub_mb: 1.8326555998427452
       distance_mb_mb: 0.8714585547144666
-      generator_radius_user: 4.9544
+      generator_radius_user: 4.89
       damping_ratio: 0.005
       brake_mass_user: 0.0
       hvac_mass_coefficient: 0.025

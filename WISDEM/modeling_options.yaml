@@ -13,6 +13,8 @@ WISDEM:
         gust_std: 0.0
         n_span: 60
         n_pc: 50
+        peak_thrust_shaving: True
+        thrust_shaving_coeff: 0.7
     DriveSE:
         flag: True
     TowerSE:             # Options of TowerSE module

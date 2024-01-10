@@ -262,10 +262,11 @@ def run_15mw(fname_wt_input):
     # Overview dictionary
     overview = OrderedDict()
 
+    dtu_rotorD = 2*prob["blade.high_level_blade_props.blade_ref_axis"][-1,-1]*np.cos(prob["hub.cone"]) + prob["hub.diameter"]
     overview['Power rating [MW]'] = prob.get_val('configuration.rated_power','MW')
     overview['Turbine class'] = 'IEC Class '+ prob['configuration.ws_class']+prob['configuration.turb_class']
-    overview['Rotor diameter [m]'] = prob["configuration.rotor_diameter_user"]
-    overview['Specific rating [W/m^2]'] = prob.get_val('configuration.rated_power','W')/np.pi/(0.5*prob["configuration.rotor_diameter_user"])**2.0
+    overview['Rotor diameter [m]'] = dtu_rotorD #prob["configuration.rotor_diameter_user"]
+    overview['Specific rating [W/m^2]'] = prob.get_val('configuration.rated_power','W')/np.pi/(0.5*dtu_rotorD)**2.0
     overview['Rotor orientation'] = 'Upwind' if prob['configuration.upwind'] else 'Downwind'
     overview['Number of blades'] = prob['configuration.n_blades']
     overview['Control'] = 'Variable speed, Collective pitch'

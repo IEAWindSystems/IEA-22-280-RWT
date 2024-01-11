@@ -13,8 +13,8 @@ False                  Echo        - Echo the input file data (flag)
 0.83                   WaveHs      - Significant wave height of incident waves (meters) [used only when WaveMod=1, 2, or 3]
 6.9                    WaveTp      - Peak-spectral period of incident waves       (sec) [used only when WaveMod=1 or 2]
 Default                WavePkShp   - Peak-shape parameter of incident wave spectrum (-) or DEFAULT (string) [used only when WaveMod=2; use 1.0 for Pierson-Moskowitz]
-0.111527               WvLowCOff   - Low  cut-off frequency or lower frequency limit of the wave spectrum beyond which the wave spectrum is zeroed (rad/s) [unused when WaveMod=0, 1, or 6]
-0.783827               WvHiCOff    - High cut-off frequency or upper frequency limit of the wave spectrum beyond which the wave spectrum is zeroed (rad/s) [unused when WaveMod=0, 1, or 6]
+0.031415926535         WvLowCOff   - Low  cut-off frequency or lower frequency limit of the wave spectrum beyond which the wave spectrum is zeroed (rad/s) [unused when WaveMod=0, 1, or 6]
+3.141592653589                  WvHiCOff    - High cut-off frequency or upper frequency limit of the wave spectrum beyond which the wave spectrum is zeroed (rad/s) [unused when WaveMod=0, 1, or 6]
 0.0                    WaveDir     - Incident wave propagation heading direction                         (degrees) [unused when WaveMod=0 or 6]
 0                      WaveDirMod  - Directional spreading function {0: none, 1: COS2S}                  (-)       [only used when WaveMod=2,3, or 4]
 1.0                    WaveDirSpread - Wave direction spreading coefficient ( > 0 )                        (-)       [only used when WaveMod=2,3, or 4 and WaveDirMod=1]
@@ -48,7 +48,7 @@ False                  WvSumQTF    - Full summation-frequency  2nd-order wave ki
 0                      ExctnMod    - Wave Excitation model {0: None, 1: DFT, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ssexctn INPUT FILE]
 0                      RdtnMod     - Radiation memory-effect model {0: no memory-effect calculation, 1: convolution, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ss INPUT FILE]
 60.0                   RdtnTMax    - Analysis time for wave radiation kernel calculations (sec) [only used when PotMod=1; determines RdtnDOmega=Pi/RdtnTMax in the cosine transform; MAKE SURE THIS IS LONG ENOUGH FOR THE RADIATION IMPULSE RESPONSE FUNCTIONS TO DECAY TO NEAR-ZERO FOR THE GIVEN PLATFORM!]
-0.0125                 RdtnDT      - Time step for wave radiation kernel calculations (sec) [only used when PotMod=1; DT<=RdtnDT<=0.1 recommended; determines RdtnOmegaMax=Pi/RdtnDT in the cosine transform]
+DEFAULT                RdtnDT      - Time step for wave radiation kernel calculations (sec) [only used when PotMod=1; DT<=RdtnDT<=0.1 recommended; determines RdtnOmegaMax=Pi/RdtnDT in the cosine transform]
 1                      NBody       - Number of WAMIT bodies to be used (-) [>=1; only used when PotMod=1. If NBodyMod=1, the WAMIT data contains a vector of size 6*NBody x 1 and matrices of size 6*NBody x 6*NBody; if NBodyMod>1, there are NBody sets of WAMIT data each with a vector of size 6 x 1 and matrices of size 6 x 6]
 1                      NBodyMod    - Body coupling model {1: include coupling terms between each body and NBody in HydroDyn equals NBODY in WAMIT, 2: neglect coupling terms between each body and NBODY=1 with XBODY=0 in WAMIT, 3: Neglect coupling terms between each body and NBODY=1 with XBODY=/0 in WAMIT} (switch) [only used when PotMod=1]
 "unused"               PotFile     - Root name of potential-flow model data; WAMIT output files containing the linear, nondimensionalized, hydrostatic restoring matrix (.hst), frequency-dependent hydrodynamic added mass matrix and damping matrix (.1), and frequency- and direction-dependent wave excitation force vector per unit wave amplitude (.3) (quoted string) [MAKE SURE THE FREQUENCIES INHERENT IN THESE WAMIT FILES SPAN THE PHYSICALLY-SIGNIFICANT RANGE OF FREQUENCIES FOR THE GIVEN PLATFORM; THEY MUST CONTAIN THE ZERO- AND INFINITE-FREQUENCY LIMITS!]
@@ -91,74 +91,79 @@ False                  WvSumQTF    - Full summation-frequency  2nd-order wave ki
            0.0            0.0            0.0            0.0            0.0            0.0
            0.0            0.0            0.0            0.0            0.0            0.0
 ---------------------- AXIAL COEFFICIENTS --------------------------------------
-1                      NAxCoef     - Number of axial coefficients (-)
+3                      NAxCoef     - Number of axial coefficients (-)
  AxCoefID      AxCd        AxCa        AxCp    
     (-)         (-)         (-)         (-)    
-     1          4.0         0.0         1.0    
+     1          0.0         0.0         0.0      ! Unloaded joint
+     2          4.0         1.0         1.0      ! Col btm
+     3          0.0         1.0         1.0      ! Pontoon ends    
 ---------------------- MEMBER JOINTS -------------------------------------------
 20                     NJoints     - Number of joints (-)   [must be exactly 0 or at least 2]
   JointID     Jointxi     Jointyi     Jointzi    JointAxID  JointOvrlp   ! [JointOvrlp= 0: do nothing at joint, 1: eliminate overlaps by calculating super member]
     (-)         (m)         (m)         (m)         (-)      (switch)  
-     1          0.0         0.0        -25.0         1           0     
-     2          0.0         0.0        15.0          1           0     
-     3         -65.0    2.3333654693970477e-07    -25.0         1           0     
-     4         -65.0    2.3333654693970477e-07    15.0          1           0     
-     5      32.499997252775856 56.29165283209902    -25.0         1           0     
-     6      32.50000288194098 56.291649582099005    15.0          1           0     
-     7      32.499997252775856 -56.29165283209902    -25.0         1           0     
-     8      32.499997252775856 -56.29165283209902    15.0          1           0     
-     9         -6.0     2.1538758179049673e-08 14.479999999999997      1           0     
-    10        -58.75    2.109003405031947e-07 14.479999999999997      1           0     
-    11      3.000000259270324 5.196152273016833 14.479999999999997      1           0     
-    12      29.37500253868858 50.87899100662314 14.479999999999997      1           0     
-    13      2.9999997464100794 -5.196152569116832 14.479999999999997      1           0     
-    14      29.374997516932023 -50.87899390593565 14.479999999999997      1           0     
-    15         -6.0     2.1538758179049673e-08    -17.0         1           0     
-    16        -58.75    2.109003405031947e-07    -17.0         1           0     
-    17      2.9999998503331295 5.196152509116836    -17.0         1           0     
-    18      29.374998534511867 50.87899331843564    -17.0         1           0     
-    19      2.9999997464100794 -5.196152569116832    -17.0         1           0     
-    20      29.374997516932023 -50.87899390593565    -17.0         1           0     
+     1          0.0         0.0       -25.0          2          0     ! Btm of center col     
+     2          0.0         0.0        15.0          1          0     ! Top of center col     
+     3        -65.0         0.0       -25.0          2          0     ! Btm of upwind col     
+     4        -65.0         0.0        15.0          1          0     ! Top of upwind col
+     5         32.5        56.29165   -25.0          2          0     ! Btm of stbd col
+     6         32.5        56.29165    15.0          1          0     ! Top of stbd col
+     7         32.5       -56.29165   -25.0          2          0     ! Btm of port col
+     8         32.5       -56.29165    15.0          1          0     ! Top of port col     
+     9         -6.0         0.0        14.48         1          0     ! Top brace - upwind     
+    10        -58.75        0.0        14.48         1          0     ! Top brace - upwind     
+    11          3.0         5.196152   14.48         1          0     ! Top brace - stbd     
+    12         29.375      50.878992   14.48         1          0     ! Top brace - stbd     
+    13          3.0        -5.196152   14.48         1          0     ! Top brace - port     
+    14         29.375     -50.878992   14.48         1          0     ! Top brace - port     
+    15         -6.0         0.0       -17.0          3          0     ! Pontoon - upwind     
+    16        -58.75        0.0       -17.0          3          0     ! Pontoon - upwind     
+    17          3.0         5.196152  -17.0          3          0     ! Pontoon - stbd     
+    18         29.375      50.878992  -17.0          3          0     ! Pontoon - stbd     
+    19          3.0        -5.196152  -17.0          3          0     ! Pontoon - port     
+    20         29.375     -50.878992  -17.0          3          0     ! Pontoon - port     
 ---------------------- MEMBER CROSS-SECTION PROPERTIES -------------------------
 10          NPropSets   - Number of member property sets (-)
  PropSetID     PropD     PropThck  
     (-)         (m)         (m)    
-     1         12.0        0.05    
-     2         12.5        0.05    
-     3         12.5        0.05    
-     4         12.5        0.05    
-     5         0.91        0.02    
-     6         0.91        0.02    
-     7         0.91        0.02    
-     8         10.0        0.04    
-     9         10.0        0.04    
-    10         10.0        0.04    
+     1         12.0        0.05    ! Center col    
+     2         12.5        0.05    ! Upwind col    
+     3         12.5        0.05    ! Stbd col    
+     4         12.5        0.05    ! Port col    
+     5         0.91        0.02    ! Top brace - upwind    
+     6         0.91        0.02    ! Top brace - stbd    
+     7         0.91        0.02    ! Top brace - port    
+     8         10.0        0.04    ! Pontoon - upwind    
+     9         10.0        0.04    ! Pontoon - stbd    
+    10         10.0        0.04    ! Pontoon - port    
 ---------------------- SIMPLE HYDRODYNAMIC COEFFICIENTS (model 1) --------------
   SimplCd    SimplCdMG    SimplCa    SimplCaMG    SimplCp    SimplCpMG   SimplAxCd  SimplAxCdMG  SimplAxCa  SimplAxCaMG  SimplAxCp  SimplAxCpMG
     (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)    
-    1.0         1.0         1.0         1.0         1.0         1.0         0.0         0.0         1.0         1.0         1.0         1.0    
+    0.6         0.6         1.0         1.0         1.0         1.0         0.0         0.0         0.0         0.0         0.0         0.0    
 ---------------------- DEPTH-BASED HYDRODYNAMIC COEFFICIENTS (model 2) ---------
 0           NCoefDpth   - Number of depth-dependent coefficients (-)
    Dpth       DpthCd     DpthCdMG     DpthCa     DpthCaMG     DpthCp     DpthCpMG    DpthAxCd   DpthAxCdMG   DpthAxCa   DpthAxCaMG   DpthAxCp   DpthAxCpMG 
     (m)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)    
 ---------------------- MEMBER-BASED HYDRODYNAMIC COEFFICIENTS (model 3) --------
-0           NCoefMembers - Number of member-based coefficients (-)
+3           NCoefMembers - Number of member-based coefficients (-)
 MemberID_HydC  MemberCd1   MemberCd2  MemberCdMG1 MemberCdMG2  MemberCa1   MemberCa2  MemberCaMG1 MemberCaMG2  MemberCp1   MemberCp2  MemberCpMG1 MemberCpMG2 MemberAxCd1 MemberAxCd2 MemberAxCdMG1 MemberAxCdMG2 MemberAxCa1 MemberAxCa2 MemberAxCaMG1 MemberAxCaMG2 MemberAxCp1 MemberAxCp2 MemberAxCpMG1 MemberAxCpMG2
     (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)    
+    8          0.6         0.6         0.6         0.6         1.2         1.2         1.2         1.2         1.0         1.0         1.0         1.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0
+     9          0.6         0.6         0.6         0.6         1.2         1.2         1.2         1.2         1.0         1.0         1.0         1.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0
+    10          0.6         0.6         0.6         0.6         1.2         1.2         1.2         1.2         1.0         1.0         1.0         1.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0
 -------------------- MEMBERS -------------------------------------------------
 10          NMembers    - Number of members (-)
  MemberID    MJointID1   MJointID2  MPropSetID1 MPropSetID2  MDivSize    MCoefMod     PropPot   !  [MCoefMod=1: use simple coeff table, 2: use depth-based coeff table, 3: use member-based coeff table] [ PropPot/=0 if member is modeled with potential-flow theory]
     (-)         (-)         (-)         (-)         (-)         (m)      (switch)     (flag)   
-     1           1           2           1           1          0.5          1         False   
-     2           3           4           2           2          0.5          1         False   
-     3           5           6           3           3          0.5          1         False   
-     4           7           8           4           4          0.5          1         False   
-     5           9          10           5           5          0.5          1         False   
-     6          11          12           6           6          0.5          1         False   
-     7          13          14           7           7          0.5          1         False   
-     8          15          16           8           8          0.5          1         False   
-     9          17          18           9           9          0.5          1         False   
-    10          19          20          10          10          0.5          1         False   
+     1           1           2           1           1          0.5          1         False    ! Center col   
+     2           3           4           2           2          0.5          1         False    ! Upwind col   
+     3           5           6           3           3          0.5          1         False    ! Stbd col   
+     4           7           8           4           4          0.5          1         False    ! Port col   
+     5           9          10           5           5          0.5          1         False    ! Top brace - upwind (can be omitted)   
+     6          11          12           6           6          0.5          1         False    ! Top brace - stbd (can be omitted)   
+     7          13          14           7           7          0.5          1         False    ! Top brace - port (can be omitted)   
+     8          15          16           8           8          0.5          3         False    ! Pontoon - upwind   
+     9          17          18           9           9          0.5          3         False    ! Pontoon - stbd   
+    10          19          20          10          10          0.5          3         False    ! Pontoon - port   
 ---------------------- FILLED MEMBERS ------------------------------------------
 0           NFillGroups - Number of filled member groups (-) [If FillDens = DEFAULT, then FillDens = WtrDens; FillFSLoc is related to MSL2SWL]
  FillNumM    FillMList   FillFSLoc   FillDens  
@@ -181,5 +186,5 @@ False                  OutAll      - Output all user-specified member and joint 
 ES11.4e2               OutFmt      - Output format for numerical results (quoted string) [not checked for validity!]
 A11                    OutSFmt     - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
-"Wave1Elev"
+"Wave1Elev,HydroFxi,HydroFyi,HydroFzi,HydroMxi,HydroMyi,HydroMzi"
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)

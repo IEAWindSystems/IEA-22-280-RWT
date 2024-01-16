@@ -816,8 +816,8 @@ components:
                     thickness:
                         grid: [0.0, 0.35, 1.0]
                         values: [0.05, 0.05, 0.05]
-                # ring_stiffeners: {material: steel, flange_thickness: 0.1, flange_width: 0.2, web_height: 0.2, web_thickness: 0.1, spacing: 0.083333}
-                # longitudinal_stiffeners: {material: steel, flange_thickness: 0.1, flange_width: 0.2, web_height: 0.2, web_thickness: 0.1, spacing: 0.52359}
+                ring_stiffeners: {material: steel, flange_thickness: 0.1, flange_width: 0.2, web_height: 0.2, web_thickness: 0.1, spacing: 0.083333}
+                longitudinal_stiffeners: {material: steel, flange_thickness: 0.1, flange_width: 0.2, web_height: 0.2, web_thickness: 0.1, spacing: 0.52359}
                 ballasts:
                     -  
                       variable_flag: true

@@ -3,7 +3,7 @@ controller_params:
     flag: true
     PS_Mode: 3
     ps_percent: 0.8
-    Fl_Mode: 1
+    Fl_Mode: 2
     zeta_pc: [1.4662448526479779, 2.030062512228778, 1.8130068579395848]
     omega_pc: [0.11468384902891134, 0.12082643062647291, 0.3959805145442727]
     U_pc: [12, 18, 24]
@@ -11,7 +11,7 @@ controller_params:
     omega_vs: 0.12
     twr_freq: 1.4799073778145184
     ptfm_freq: 0.2717484204906427
-    Kp_float: -0.1477808226207514
+    # Kp_float: -0.1477808226207514
     PA_Mode: 2
     PA_CornerFreq: 6.2831
     PA_Damping: 0.707
@@ -61,7 +61,7 @@ controller_params:
     flp_maxpit: 0.1745
     WS_GS_n: 60
     PC_GS_n: 30
-    tune_Fl: false
+    tune_Fl: true
     max_torque_factor: 1.1
     IPC_Kp1p: 0.0
     IPC_Kp2p: 0.0

@@ -13,7 +13,7 @@ False                  VelInterpCubic - Use cubic interpolation for velocity in 
 ================== Parameters for Steady Wind Conditions [used only for WindType = 1] =========================
 5.0                    HWindSpeed  - Horizontal windspeed                            (m/s)
 170.0                  RefHt       - Reference height for horizontal wind speed      (m)
-0.12                   PLexp       - Power law exponent                              (-)
+0.14                   PLexp       - Power law exponent                              (-)
 ================== Parameters for Uniform wind file   [used only for WindType = 2] ============================
 "none"                 Filename_Uni - Filename of time series data for uniform wind field.      (-)
 170.0                  RefHt_Uni   - Reference height for horizontal wind speed                (m)

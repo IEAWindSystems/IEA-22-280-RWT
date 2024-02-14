@@ -13,7 +13,7 @@ True                   CBMod       - [T/F] If True perform C-B reduction, else f
 0                      Nmodes      - Number of internal modes to retain (ignored if CBMod=False). If Nmodes=0 --> Guyan Reduction.
 1.                     JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
 1                      GuyanDampMod - Guyan damping {0=none, 1=Rayleigh Damping, 2=user specified 6x6 matrix}.
-0.0        0.00183     RayleighDamp - Mass and stiffness proportional damping  coefficients (Rayleigh Damping) [only if GuyanDampMod=1].
+0.0        0.00072     RayleighDamp - Mass and stiffness proportional damping  coefficients (Rayleigh Damping) [only if GuyanDampMod=1].
 6                      GuyanDampSize - Guyan damping matrix (6x6) [only if GuyanDampMod=2].
            0.0            0.0            0.0            0.0            0.0            0.0
            0.0            0.0            0.0            0.0            0.0            0.0

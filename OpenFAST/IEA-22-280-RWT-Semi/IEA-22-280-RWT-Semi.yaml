@@ -40,6 +40,7 @@ controller_params:
     F_NotchType: 0
     IPC_ControlMode: 0
     VS_ControlMode: 2
+    VS_ConstTorque: 0
     PC_ControlMode: 1
     Y_ControlMode: 0
     SS_Mode: 1

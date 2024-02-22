@@ -124,9 +124,10 @@ MemberID_HydC  MemberCd1   MemberCd2  MemberCdMG1 MemberCdMG2  MemberCa1   Membe
     (-)         (-)         (-)         (-)         (-)         (m)      (switch)     (flag)   
      1           1           2           1           1          0.5          1         False   
 ---------------------- FILLED MEMBERS ------------------------------------------
-0           NFillGroups - Number of filled member groups (-) [If FillDens = DEFAULT, then FillDens = WtrDens; FillFSLoc is related to MSL2SWL]
+1           NFillGroups - Number of filled member groups (-) [If FillDens = DEFAULT, then FillDens = WtrDens; FillFSLoc is related to MSL2SWL]
  FillNumM    FillMList   FillFSLoc   FillDens  
     (-)         (-)         (m)      (kg/m^3)  
+     1           1          0.0      DEFAULT
 ---------------------- MARINE GROWTH -------------------------------------------
 0           NMGDepths   - Number of marine-growth depths specified (-)
   MGDpth      MGThck      MGDens   

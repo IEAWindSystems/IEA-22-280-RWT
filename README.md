@@ -1,5 +1,5 @@
 # IEA-22-280-RWT
-This repository contains the model data for the 22-MW offshore reference turbine developed within IEA Wind Task 55 [REFWIND](https://iea-wind.org/task-55/).
+This repository contains the model data for the 22-MW offshore reference turbine developed within IEA Wind Task 55 [REFWIND](https://iea-wind.org/task55/).
 
 The documentation for the turbine is in progress.
 

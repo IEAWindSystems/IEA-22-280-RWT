@@ -1,0 +1,100 @@
+----------------------------------------QBlade Turbine Definition File----------------------------------------------
+Generated with : QBlade IH v2.0.6.4-dev_beta windows
+Archive Format: 310019
+Time : 16:26:58
+Date : 12.03.2024
+
+----------------------------------------Object Name-----------------------------------------------------------------
+IEA-22-280-RWT-Monopile                  OBJECTNAME         - the name of the turbine object
+
+----------------------------------------Rotor Definition------------------------------------------------------------
+Aero/IEA-22-280-RWT.bld                  BLADEFILE          - the path of the blade file that is used in this turbine definition
+0                                        TURBTYPE           - the turbine type (0 = HAWT or 1 = VAWT)
+3                                        NUMBLADES          - the number of blades (a Structural Model overrides this value)
+0                                        ROTORCONFIG        - the rotor configuration (0 = UPWIND or 1 = DOWNWIND)
+0                                        ROTATIONALDIR      - the direction of rotor rotation (0 = STANDARD or 1 = REVERSED)
+2                                        DISCTYPE           - type of rotor discretization (0 = from Bladetable, 1 = linear, 2 = cosine) 
+0                                        INTPTYPE           - type of rotor interpolation (0 = linear, 1 = Akima splines) 
+60                                       NUMPANELS          - the number of aerodynamic panels per blade (unused if DISCTYPE = 0)
+
+----------------------------------------Turbine Geometry Parameters-------------------------------------------------
+These values are only used if no Structural Model is defined for this Turbine, in case of a Structural Model the geometry is defined in the Structural Input Files!!
+23.6670                                  OVERHANG           - the rotor overhang [m] (HAWT only)
+0.0000                                   SHAFTTILT          - the shaft tilt angle [deg] (HAWT only)
+0.0000                                   ROTORCONE          - the rotor cone angle [deg] (HAWT only)
+0.0000                                   CLEARANCE          - the rotor clearance to ground [m] (VAWT only)
+0.0000                                   XTILT              - the rotor x-tilt angle [deg] (VAWT only)
+0.0000                                   YTILT              - the rotor y-tilt angle [deg] (VAWT only)
+284.0000                                 TOWERHEIGHT        - the tower heigh [m]
+4.0570                                   TOWERTOPRAD        - the tower top radius [m]
+5.6800                                   TOWERBOTRAD        - the tower bottom radius [m]
+
+----------------------------------------Dynamic Stall Models--------------------------------------------------------
+1                                        DYNSTALLTYPE       - the dynamic stall model: 0 = none; 1 = OYE; ; 2 = IAG; 3 = GORMONT-BERG; 4 = ATEFLAP
+8                                        TF_OYE             - Tf constant for the OYE dynamic stall model
+6                                        AM_GB              - Am constant for the GORMONT-BERG dynamic stall model
+3                                        TF_ATE             - Tf constant for the ATEFLAP dynamic stall model
+2                                        TP_ATE             - Tp constant for the ATEFLAP dynamic stall model
+IAGPARAMS           - the parameters for the IAG DS model, order according to docs & GUI
+0.30 0.70 0.70 0.53 0.75 1.70 3.00 6.00 6.00 0.20 0.10 1.50 1.50 0.00 
+
+----------------------------------------Aerodynamic Models----------------------------------------------------------
+true                                     UNSTEADYAERO       - include unsteady attached flow aerodynamics? (0 = OFF or 1 = ON)
+true                                     2PLIFTDRAG         - include the 2 point lift drag correction? (0 = OFF or 1 = ON)
+false                                    HIMMELSKAMP        - include the Himmelskamp Stall delay? (0 = OFF or 1 = ON) (HAWT only)
+true                                     TOWERSHADOW        - include the tower shadow effect (0 = OFF or 1 = ON)
+0.50                                     TOWERDRAG          - the tower drag coefficient [-] (if a Structural Model is used the tower drag is defined in the tower input file)
+
+----------------------------------------Wake Type------------------------------------------------------------------
+1                                        WAKETYPE           - the wake type: 0 = free vortex wake; 1 = unsteady BEM (unsteady BEM is only available for HAWT)
+
+----------------------------------------Vortex Wake Parameters------------------------------------------------------
+Only used if waketype = 0
+0                                        WAKEINTTYPE        - the wake integration type: 0 = EF; 1 = PC; 2 = PC2B
+true                                     WAKEROLLUP         - calculate wake self-induction (0 = OFF or 1 = ON)
+true                                     TRAILINGVORT       - include trailing vortex elements (0 = OFF or 1 = ON)
+true                                     SHEDVORT           - include shed vortex elements (0 = OFF or 1 = ON)
+0                                        CONVECTIONTYPE     - the wake convection type (0 = BL, 1 = HH, 2 = LOC)
+1.00                                     WAKERELAXATION     - the wake relaxation factor [0-1]
+1.00                                     FIRSTWAKEROW       - first wake row length [-]
+200000                                   MAXWAKESIZE        - the maximum number of wake elements [-]
+100                                      MAXWAKEDIST        - the maxmimum wake distance from the rotor plane (normalized by dia) [-]
+0.10000                                  WAKEREDUCTION      - the wake reduction factor [-]
+0                                        WAKELENGTHTYPE     - the wake length type (0 = counted in rotor revolutions, 1 = counted in time steps)
+1000000.00                               CONVERSIONLENGTH   - the wake conversion length (to particles) [-]
+0.50                                     NEARWAKELENGTH     - the near wake length [-]
+2.00                                     ZONE1LENGTH        - the wake zone 1 length [-]
+4.00                                     ZONE2LENGTH        - the wake zone 2 length [-]
+6.00                                     ZONE3LENGTH        - the wake zone 3 length [-]
+2                                        ZONE1FACTOR        - the wake zone 1 factor (integer!) [-]
+2                                        ZONE2FACTOR        - the wake zone 2 factor (integer!) [-]
+2                                        ZONE3FACTOR        - the wake zone 3 factor (integer!) [-]
+
+----------------------------------------Vortex Core Parameters------------------------------------------------------
+Only used if waketype = 0
+0.05                                     BOUNDCORERADIUS    - the fixed core radius of the bound blade vortex (fraction of local chord) [0-1]
+0.05                                     WAKECORERADIUS     - the intial core radius of the free wake vortex (fraction of local chord) [0-1]
+1040.00                                  VORTEXVISCOSITY    - the turbulent vortex viscosity
+false                                    VORTEXSTRAIN       - calculate vortex strain 0 = OFF, 1 = ON
+50                                       MAXSTRAIN          - the maximum element strain, before elements are removed from the wake [-]
+
+----------------------------------------Gamma Iteration Parameters--------------------------------------------------
+Only used if waketype = 0
+0.10                                     GAMMARELAXATION    - the relaxation factor used in the gamma (circulation) iteration [0-1]
+0.00100                                  GAMMAEPSILON       - the relative gamma (circulation) convergence criteria
+100                                      GAMMAITERATIONS    - the maximum number of gamma (circulation) iterations (integer!) [-]
+
+----------------------------------------Unsteady BEM Parameters------------------------------------------------------
+12                                       POLARDISC          - the polar discretization for the unsteady BEM (integer!) [-]
+true                                     BEMTIPLOSS         - use BEM tip loss factor, 0 = OFF, 1 = ON
+0.00                                     BEMSPEEDUP         - initial BEM convergence acceleration time [s]
+
+----------------------------------------Structural Model-------------------------------------------------------------
+Structure/IEA_22_280_RWT_MONO_Main.str   STRUCTURALFILE     - the input file for the structural model (leave blank if unused)
+false                                    GEOMSTIFFNESS      - enable geometric stiffness, 0 = OFF, 1 = ON
+
+----------------------------------------Turbine Controller-----------------------------------------------------------
+2                                        CONTROLLERTYPE     - the type of turbine controller 0 = none, 1 = BLADED, 2 = DTU, 3 = TUB
+dtu_we_controller_64                     CONTROLLERFILE     - the controller file name, WITHOUT file ending (.dll or .so ) - leave blank if unused
+Control/dtu_we_Params_DTU_IEA_22MW_Mono.htc PARAMETERFILE      - the controller parameter file name (leave blank if unused)
+

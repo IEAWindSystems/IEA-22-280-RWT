@@ -1,0 +1,119 @@
+----------------------------------------QBlade Blade Definition File------------------------------------------------
+Generated with : QBlade IH v2.0.6.4-dev_beta windows
+Archive Format: 310019
+Time : 16:26:57
+Date : 12.03.2024
+
+----------------------------------------Object Name-----------------------------------------------------------------
+IEA-22-280-RWT                           OBJECTNAME         - the name of the blade object
+
+----------------------------------------Parameters------------------------------------------------------------------
+HAWT                                     ROTORTYPE          - the rotor type
+false                                    INVERTEDFOILS      - invert the airfoils? 0 - NO, 1 - YES (only VAWT)
+3                                        NUMBLADES          - number of blades
+
+----------------------------------------Blade Data------------------------------------------------------------------
+POS_[m]             CHORD_[m]           TWIST_[deg]         OFFSET_X_[m]        OFFSET_Y_[m]        P_AXIS [-]          POLAR_FILE          
+4.20000             5.80000             12.00               0.00000             0.00000             0.50                circular_Default_RE3.00E+06.plr
+5.57800             5.80001             12.00               0.00000             -0.00000            0.50                circular_Default_RE3.00E+06.plr
+6.95600             5.80003             12.00               0.00000             -0.00000            0.50                circular_Default_RE3.00E+06.plr
+8.33400             5.87330             12.00               0.00000             -0.00001            0.50                circular_FB90_blend_t96.5_circular_FB90_blend_t96.5_RE5.44E+06.plr
+9.71200             6.03634             11.99               0.00000             -0.00002            0.49                circular_FB90_blend_t93.0_circular_FB90_blend_t93.0_RE7.88E+06.plr
+11.09000            6.20405             11.98               0.00000             -0.00004            0.48                FB90_FB80_blend_t89.2_FB90_FB80_blend_t89.2_RE1.00E+07.plr
+12.46800            6.35525             11.97               0.00000             -0.00009            0.46                FB90_FB80_blend_t83.5_FB90_FB80_blend_t83.5_RE1.00E+07.plr
+13.84600            6.50921             11.95               0.00000             -0.00017            0.45                FB80_FB70_blend_t77.8_FB80_FB70_blend_t77.8_RE1.00E+07.plr
+15.22400            6.64362             11.93               0.00000             -0.00028            0.44                FB80_FB70_blend_t71.8_FB80_FB70_blend_t71.8_RE1.00E+07.plr
+16.60200            6.76377             11.89               0.00000             -0.00046            0.43                FB70_FB60_blend_t66.3_FB70_FB60_blend_t66.3_RE1.00E+07.plr
+17.98000            6.86895             11.84               0.00000             -0.00070            0.42                FB70_FB60_blend_t61.0_FB70_FB60_blend_t61.0_RE1.00E+07.plr
+19.35800            6.95701             11.78               0.00000             -0.00102            0.41                FB60_SNL-FFA-W3-560FB_blend_t56.4_FB60_SNL-FFA-W3-560FB_blend_t56.4_RE1.00E+07.plr
+20.73600            7.03386             11.70               0.00000             -0.00146            0.40                SNL-FFA-W3-560FB_SNL-FFA-W3-480FB_blend_t52.8_SNL-FFA-W3-560FB_SNL-FFA-W3-480FB_blend_t52.8_RE9.26E+06.plr
+22.11400            7.09410             11.59               0.00000             -0.00200            0.39                SNL-FFA-W3-560FB_SNL-FFA-W3-480FB_blend_t49.2_SNL-FFA-W3-560FB_SNL-FFA-W3-480FB_blend_t49.2_RE8.49E+06.plr
+23.49200            7.14320             11.46               0.00000             -0.00269            0.38                SNL-FFA-W3-480FB_SNL-FFA-W3-420FB_blend_t45.8_SNL-FFA-W3-480FB_SNL-FFA-W3-420FB_blend_t45.8_RE8.37E+06.plr
+24.87000            7.18146             11.29               0.00000             -0.00355            0.37                SNL-FFA-W3-480FB_SNL-FFA-W3-420FB_blend_t43.1_SNL-FFA-W3-480FB_SNL-FFA-W3-420FB_blend_t43.1_RE9.41E+06.plr
+26.24800            7.20095             11.07               0.00000             -0.00458            0.37                SNL-FFA-W3-420FB_FFA-W3-360_blend_t40.9_SNL-FFA-W3-420FB_FFA-W3-360_blend_t40.9_RE1.03E+07.plr
+27.62600            7.21341             10.79               0.00000             -0.00585            0.36                SNL-FFA-W3-420FB_FFA-W3-360_blend_t39.6_SNL-FFA-W3-420FB_FFA-W3-360_blend_t39.6_RE1.11E+07.plr
+29.00400            7.21979             10.43               0.00000             -0.00736            0.35                SNL-FFA-W3-420FB_FFA-W3-360_blend_t38.2_SNL-FFA-W3-420FB_FFA-W3-360_blend_t38.2_RE1.18E+07.plr
+30.38200            7.21568             9.93                0.00000             -0.00911            0.35                SNL-FFA-W3-420FB_FFA-W3-360_blend_t36.9_SNL-FFA-W3-420FB_FFA-W3-360_blend_t36.9_RE1.25E+07.plr
+31.76000            7.20034             9.28                0.00000             -0.01121            0.34                FFA-W3-360_FFA-W3-330blend_blend_t35.8_FFA-W3-360_FFA-W3-330blend_blend_t35.8_RE1.33E+07.plr
+33.13800            7.18040             8.68                0.00000             -0.01361            0.34                FFA-W3-360_FFA-W3-330blend_blend_t35.2_FFA-W3-360_FFA-W3-330blend_blend_t35.2_RE1.41E+07.plr
+34.51600            7.15154             8.16                0.00000             -0.01639            0.34                FFA-W3-360_FFA-W3-330blend_blend_t34.7_FFA-W3-360_FFA-W3-330blend_blend_t34.7_RE1.49E+07.plr
+35.89400            7.11332             7.68                0.00000             -0.01960            0.33                FFA-W3-360_FFA-W3-330blend_blend_t34.1_FFA-W3-360_FFA-W3-330blend_blend_t34.1_RE1.57E+07.plr
+37.27200            7.07119             7.28                0.00000             -0.02321            0.33                FFA-W3-360_FFA-W3-330blend_blend_t33.5_FFA-W3-360_FFA-W3-330blend_blend_t33.5_RE1.64E+07.plr
+38.65000            7.02183             6.93                0.00000             -0.02735            0.33                FFA-W3-330blend_FFA-W3-301_blend_t33.0_FFA-W3-330blend_FFA-W3-301_blend_t33.0_RE1.70E+07.plr
+40.02800            6.96708             6.61                0.00000             -0.03200            0.32                FFA-W3-330blend_FFA-W3-301_blend_t32.8_FFA-W3-330blend_FFA-W3-301_blend_t32.8_RE1.71E+07.plr
+41.40600            6.90813             6.32                0.00000             -0.03719            0.32                FFA-W3-330blend_FFA-W3-301_blend_t32.6_FFA-W3-330blend_FFA-W3-301_blend_t32.6_RE1.72E+07.plr
+42.78400            6.84358             6.05                0.00000             -0.04304            0.32                FFA-W3-330blend_FFA-W3-301_blend_t32.4_FFA-W3-330blend_FFA-W3-301_blend_t32.4_RE1.72E+07.plr
+44.16200            6.77544             5.79                0.00000             -0.04950            0.32                FFA-W3-330blend_FFA-W3-301_blend_t32.2_FFA-W3-330blend_FFA-W3-301_blend_t32.2_RE1.73E+07.plr
+45.54000            6.70318             5.54                0.00000             -0.05670            0.31                FFA-W3-330blend_FFA-W3-301_blend_t32.0_FFA-W3-330blend_FFA-W3-301_blend_t32.0_RE1.73E+07.plr
+46.91800            6.62711             5.31                0.00000             -0.06467            0.31                FFA-W3-330blend_FFA-W3-301_blend_t31.8_FFA-W3-330blend_FFA-W3-301_blend_t31.8_RE1.74E+07.plr
+48.29600            6.54835             5.08                0.00000             -0.07338            0.31                FFA-W3-330blend_FFA-W3-301_blend_t31.7_FFA-W3-330blend_FFA-W3-301_blend_t31.7_RE1.75E+07.plr
+49.67400            6.46623             4.85                0.00000             -0.08302            0.31                FFA-W3-330blend_FFA-W3-301_blend_t31.5_FFA-W3-330blend_FFA-W3-301_blend_t31.5_RE1.75E+07.plr
+51.05200            6.38160             4.63                0.00000             -0.09355            0.31                FFA-W3-330blend_FFA-W3-301_blend_t31.3_FFA-W3-330blend_FFA-W3-301_blend_t31.3_RE1.76E+07.plr
+52.43000            6.29480             4.42                0.00000             -0.10503            0.30                FFA-W3-330blend_FFA-W3-301_blend_t31.1_FFA-W3-330blend_FFA-W3-301_blend_t31.1_RE1.77E+07.plr
+53.80800            6.20561             4.20                0.00000             -0.11759            0.30                FFA-W3-330blend_FFA-W3-301_blend_t30.9_FFA-W3-330blend_FFA-W3-301_blend_t30.9_RE1.77E+07.plr
+55.18600            6.11486             3.99                0.00000             -0.13118            0.30                FFA-W3-330blend_FFA-W3-301_blend_t30.7_FFA-W3-330blend_FFA-W3-301_blend_t30.7_RE1.78E+07.plr
+56.56400            6.02237             3.78                0.00000             -0.14596            0.30                FFA-W3-330blend_FFA-W3-301_blend_t30.5_FFA-W3-330blend_FFA-W3-301_blend_t30.5_RE1.79E+07.plr
+57.94200            5.92843             3.56                0.00000             -0.16196            0.30                FFA-W3-330blend_FFA-W3-301_blend_t30.3_FFA-W3-330blend_FFA-W3-301_blend_t30.3_RE1.79E+07.plr
+59.32000            5.83355             3.35                0.00000             -0.17918            0.30                FFA-W3-301_FFA-W3-270blend_blend_t30.1_FFA-W3-301_FFA-W3-270blend_blend_t30.1_RE1.80E+07.plr
+60.69800            5.73750             3.14                0.00000             -0.19782            0.30                FFA-W3-301_FFA-W3-270blend_blend_t29.8_FFA-W3-301_FFA-W3-270blend_blend_t29.8_RE1.79E+07.plr
+62.07600            5.64078             2.92                0.00000             -0.21782            0.30                FFA-W3-301_FFA-W3-270blend_blend_t29.6_FFA-W3-301_FFA-W3-270blend_blend_t29.6_RE1.78E+07.plr
+63.45400            5.54356             2.71                0.00000             -0.23930            0.30                FFA-W3-301_FFA-W3-270blend_blend_t29.4_FFA-W3-301_FFA-W3-270blend_blend_t29.4_RE1.78E+07.plr
+64.83200            5.44582             2.49                0.00000             -0.26239            0.29                FFA-W3-301_FFA-W3-270blend_blend_t29.2_FFA-W3-301_FFA-W3-270blend_blend_t29.2_RE1.77E+07.plr
+66.21000            5.34802             2.27                0.00000             -0.28702            0.29                FFA-W3-301_FFA-W3-270blend_blend_t28.9_FFA-W3-301_FFA-W3-270blend_blend_t28.9_RE1.76E+07.plr
+67.58800            5.25006             2.05                0.00000             -0.31342            0.29                FFA-W3-301_FFA-W3-270blend_blend_t28.7_FFA-W3-301_FFA-W3-270blend_blend_t28.7_RE1.75E+07.plr
+68.96600            5.15218             1.83                0.00000             -0.34160            0.29                FFA-W3-301_FFA-W3-270blend_blend_t28.5_FFA-W3-301_FFA-W3-270blend_blend_t28.5_RE1.75E+07.plr
+70.34400            5.05466             1.61                0.00000             -0.37155            0.29                FFA-W3-301_FFA-W3-270blend_blend_t28.2_FFA-W3-301_FFA-W3-270blend_blend_t28.2_RE1.74E+07.plr
+71.72200            4.95738             1.38                0.00000             -0.40354            0.29                FFA-W3-301_FFA-W3-270blend_blend_t28.0_FFA-W3-301_FFA-W3-270blend_blend_t28.0_RE1.73E+07.plr
+73.10000            4.86071             1.16                0.00000             -0.43750            0.29                FFA-W3-301_FFA-W3-270blend_blend_t27.8_FFA-W3-301_FFA-W3-270blend_blend_t27.8_RE1.73E+07.plr
+74.47800            4.76469             0.93                0.00000             -0.47357            0.29                FFA-W3-301_FFA-W3-270blend_blend_t27.5_FFA-W3-301_FFA-W3-270blend_blend_t27.5_RE1.72E+07.plr
+75.85600            4.66932             0.70                0.00000             -0.51186            0.29                FFA-W3-301_FFA-W3-270blend_blend_t27.3_FFA-W3-301_FFA-W3-270blend_blend_t27.3_RE1.71E+07.plr
+77.23400            4.57496             0.48                0.00000             -0.55231            0.29                FFA-W3-301_FFA-W3-270blend_blend_t27.1_FFA-W3-301_FFA-W3-270blend_blend_t27.1_RE1.70E+07.plr
+78.61200            4.48152             0.25                0.00000             -0.59520            0.29                FFA-W3-270blend_FFA-W3-241_blend_t26.9_FFA-W3-270blend_FFA-W3-241_blend_t26.9_RE1.70E+07.plr
+79.99000            4.38910             0.02                0.00000             -0.64059            0.29                FFA-W3-270blend_FFA-W3-241_blend_t26.8_FFA-W3-270blend_FFA-W3-241_blend_t26.8_RE1.69E+07.plr
+81.36800            4.29798             -0.21               0.00000             -0.68838            0.29                FFA-W3-270blend_FFA-W3-241_blend_t26.6_FFA-W3-270blend_FFA-W3-241_blend_t26.6_RE1.69E+07.plr
+82.74600            4.20802             -0.45               0.00000             -0.73892            0.29                FFA-W3-270blend_FFA-W3-241_blend_t26.5_FFA-W3-270blend_FFA-W3-241_blend_t26.5_RE1.68E+07.plr
+84.12400            4.11938             -0.68               0.00000             -0.79220            0.29                FFA-W3-270blend_FFA-W3-241_blend_t26.3_FFA-W3-270blend_FFA-W3-241_blend_t26.3_RE1.68E+07.plr
+85.50200            4.03227             -0.91               0.00000             -0.84817            0.29                FFA-W3-270blend_FFA-W3-241_blend_t26.2_FFA-W3-270blend_FFA-W3-241_blend_t26.2_RE1.67E+07.plr
+86.88000            3.94651             -1.14               0.00000             -0.90722            0.29                FFA-W3-270blend_FFA-W3-241_blend_t26.1_FFA-W3-270blend_FFA-W3-241_blend_t26.1_RE1.67E+07.plr
+88.25800            3.86233             -1.37               0.00000             -0.96924            0.29                FFA-W3-270blend_FFA-W3-241_blend_t25.9_FFA-W3-270blend_FFA-W3-241_blend_t25.9_RE1.66E+07.plr
+89.63600            3.77981             -1.60               0.00000             -1.03430            0.29                FFA-W3-270blend_FFA-W3-241_blend_t25.8_FFA-W3-270blend_FFA-W3-241_blend_t25.8_RE1.66E+07.plr
+91.01400            3.69883             -1.83               0.00000             -1.10274            0.29                FFA-W3-270blend_FFA-W3-241_blend_t25.6_FFA-W3-270blend_FFA-W3-241_blend_t25.6_RE1.65E+07.plr
+92.39200            3.61959             -2.05               0.00000             -1.17442            0.29                FFA-W3-270blend_FFA-W3-241_blend_t25.5_FFA-W3-270blend_FFA-W3-241_blend_t25.5_RE1.65E+07.plr
+93.77000            3.54210             -2.28               0.00000             -1.24951            0.29                FFA-W3-270blend_FFA-W3-241_blend_t25.3_FFA-W3-270blend_FFA-W3-241_blend_t25.3_RE1.64E+07.plr
+95.14800            3.46628             -2.50               0.00000             -1.32827            0.29                FFA-W3-270blend_FFA-W3-241_blend_t25.2_FFA-W3-270blend_FFA-W3-241_blend_t25.2_RE1.64E+07.plr
+96.52600            3.39229             -2.72               0.00000             -1.41056            0.29                FFA-W3-270blend_FFA-W3-241_blend_t25.1_FFA-W3-270blend_FFA-W3-241_blend_t25.1_RE1.63E+07.plr
+97.90400            3.32006             -2.94               0.00000             -1.49667            0.30                FFA-W3-270blend_FFA-W3-241_blend_t24.9_FFA-W3-270blend_FFA-W3-241_blend_t24.9_RE1.63E+07.plr
+99.28200            3.24957             -3.16               0.00000             -1.58675            0.30                FFA-W3-270blend_FFA-W3-241_blend_t24.8_FFA-W3-270blend_FFA-W3-241_blend_t24.8_RE1.62E+07.plr
+100.66000           3.18093             -3.37               0.00000             -1.68066            0.30                FFA-W3-270blend_FFA-W3-241_blend_t24.6_FFA-W3-270blend_FFA-W3-241_blend_t24.6_RE1.62E+07.plr
+102.03800           3.11401             -3.59               0.00000             -1.77881            0.30                FFA-W3-270blend_FFA-W3-241_blend_t24.5_FFA-W3-270blend_FFA-W3-241_blend_t24.5_RE1.61E+07.plr
+103.41600           3.04882             -3.79               0.00000             -1.88122            0.30                FFA-W3-270blend_FFA-W3-241_blend_t24.4_FFA-W3-270blend_FFA-W3-241_blend_t24.4_RE1.61E+07.plr
+104.79400           2.98536             -4.00               0.00000             -1.98782            0.30                FFA-W3-270blend_FFA-W3-241_blend_t24.2_FFA-W3-270blend_FFA-W3-241_blend_t24.2_RE1.60E+07.plr
+106.17200           2.92357             -4.20               0.00000             -2.09907            0.30                FFA-W3-241_FFA-W3-211_blend_t24.1_FFA-W3-241_FFA-W3-211_blend_t24.1_RE1.60E+07.plr
+107.55000           2.86335             -4.39               0.00000             -2.21489            0.30                FFA-W3-241_FFA-W3-211_blend_t24.0_FFA-W3-241_FFA-W3-211_blend_t24.0_RE1.57E+07.plr
+108.92800           2.80468             -4.58               0.00000             -2.33530            0.31                FFA-W3-241_FFA-W3-211_blend_t23.8_FFA-W3-241_FFA-W3-211_blend_t23.8_RE1.55E+07.plr
+110.30600           2.74751             -4.77               0.00000             -2.46074            0.31                FFA-W3-241_FFA-W3-211_blend_t23.7_FFA-W3-241_FFA-W3-211_blend_t23.7_RE1.52E+07.plr
+111.68400           2.69163             -4.95               0.00000             -2.59108            0.31                FFA-W3-241_FFA-W3-211_blend_t23.6_FFA-W3-241_FFA-W3-211_blend_t23.6_RE1.50E+07.plr
+113.06200           2.63702             -5.13               0.00000             -2.72646            0.31                FFA-W3-241_FFA-W3-211_blend_t23.5_FFA-W3-241_FFA-W3-211_blend_t23.5_RE1.47E+07.plr
+114.44000           2.58361             -5.30               0.00000             -2.86725            0.31                FFA-W3-241_FFA-W3-211_blend_t23.3_FFA-W3-241_FFA-W3-211_blend_t23.3_RE1.45E+07.plr
+115.81800           2.53102             -5.46               0.00000             -3.01326            0.31                FFA-W3-241_FFA-W3-211_blend_t23.2_FFA-W3-241_FFA-W3-211_blend_t23.2_RE1.42E+07.plr
+117.19600           2.47933             -5.62               0.00000             -3.16482            0.32                FFA-W3-241_FFA-W3-211_blend_t23.1_FFA-W3-241_FFA-W3-211_blend_t23.1_RE1.40E+07.plr
+118.57400           2.42835             -5.78               0.00000             -3.32214            0.32                FFA-W3-241_FFA-W3-211_blend_t23.0_FFA-W3-241_FFA-W3-211_blend_t23.0_RE1.37E+07.plr
+119.95200           2.37748             -5.92               0.00000             -3.48506            0.32                FFA-W3-241_FFA-W3-211_blend_t22.8_FFA-W3-241_FFA-W3-211_blend_t22.8_RE1.35E+07.plr
+121.33000           2.32700             -6.06               0.00000             -3.65403            0.32                FFA-W3-241_FFA-W3-211_blend_t22.7_FFA-W3-241_FFA-W3-211_blend_t22.7_RE1.32E+07.plr
+122.70800           2.27642             -6.19               0.00000             -3.82912            0.32                FFA-W3-241_FFA-W3-211_blend_t22.6_FFA-W3-241_FFA-W3-211_blend_t22.6_RE1.30E+07.plr
+124.08600           2.22503             -6.31               0.00000             -4.01022            0.32                FFA-W3-241_FFA-W3-211_blend_t22.5_FFA-W3-241_FFA-W3-211_blend_t22.5_RE1.27E+07.plr
+125.46400           2.17326             -6.43               0.00000             -4.19787            0.32                FFA-W3-241_FFA-W3-211_blend_t22.3_FFA-W3-241_FFA-W3-211_blend_t22.3_RE1.25E+07.plr
+126.84200           2.12013             -6.52               0.00000             -4.39202            0.33                FFA-W3-241_FFA-W3-211_blend_t22.2_FFA-W3-241_FFA-W3-211_blend_t22.2_RE1.22E+07.plr
+128.22000           2.06495             -6.59               0.00000             -4.59263            0.33                FFA-W3-241_FFA-W3-211_blend_t22.1_FFA-W3-241_FFA-W3-211_blend_t22.1_RE1.20E+07.plr
+129.59800           2.00818             -6.65               0.00000             -4.80028            0.33                FFA-W3-241_FFA-W3-211_blend_t22.0_FFA-W3-241_FFA-W3-211_blend_t22.0_RE1.17E+07.plr
+130.97600           1.94748             -6.69               0.00000             -5.01479            0.33                FFA-W3-241_FFA-W3-211_blend_t21.8_FFA-W3-241_FFA-W3-211_blend_t21.8_RE1.15E+07.plr
+132.35400           1.88404             -6.67               0.00000             -5.23627            0.33                FFA-W3-241_FFA-W3-211_blend_t21.7_FFA-W3-241_FFA-W3-211_blend_t21.7_RE1.12E+07.plr
+133.73200           1.81640             -6.61               0.00000             -5.46520            0.33                FFA-W3-241_FFA-W3-211_blend_t21.6_FFA-W3-241_FFA-W3-211_blend_t21.6_RE1.10E+07.plr
+135.11000           1.73052             -6.54               0.00000             -5.70154            0.32                FFA-W3-241_FFA-W3-211_blend_t21.5_FFA-W3-241_FFA-W3-211_blend_t21.5_RE1.07E+07.plr
+136.48800           1.61349             -6.41               0.00000             -5.94603            0.32                FFA-W3-241_FFA-W3-211_blend_t21.3_FFA-W3-241_FFA-W3-211_blend_t21.3_RE1.05E+07.plr
+137.86600           1.45621             -6.20               0.00000             -6.19829            0.31                FFA-W3-241_FFA-W3-211_blend_t21.2_FFA-W3-241_FFA-W3-211_blend_t21.2_RE1.02E+07.plr
+139.24400           1.25015             -5.96               0.00000             -6.45658            0.31                FFA-W3-211_70%_free_transition,_30%_fully_turbulent_RE1.00E+07.plr
+140.62200           0.90380             -5.63               0.00000             -6.72417            0.29                FFA-W3-211_70%_free_transition,_30%_fully_turbulent_RE1.00E+07.plr
+141.31100           0.68273             -5.36               0.00000             -6.86105            0.27                FFA-W3-211_70%_free_transition,_30%_fully_turbulent_RE1.00E+07.plr
+142.00000           0.40000             -4.95               0.00000             -7.00000            0.25                FFA-W3-211_70%_free_transition,_30%_fully_turbulent_RE1.00E+07.plr
+

@@ -1,0 +1,130 @@
+---------------------- QBLADE STRUCTURAL MODEL INPUT FILE -----------------
+iea22mw semisub turbine
+------------------------------- CHRONO PARAMETERS -------------------------
+0.2				GLBGEOEPS - Global geometry epsilon for node placement
+
+------------------------------- HAWT TURBINE CONFIGURATION ----------------
+4				PRECONE - Rotor PreCone (deg) (HAWT only)
+6				SHFTTILT - Turbine Shaft Tilt (deg) (HAWT only)
+14.0771			OVERHANG - Rotor Overhang (m) (HAWT only)
+4.1425			TWR2SHFT - Tower to Shaft distance (m) (HAWT only)
+
+------------------------------- MASS AND INERTIA --------------------------
+28740.9904		YAWBRMASS - Yaw Bearing Mass (kg) (HAWT only)
+821239.8005		NACMASS - Nacelle Mass (kg) (HAWT only)
+-5.8470  		NACCMX - Downwind distance from the tower-top to the nacelle CM (m) (HAWT only)
+-0.1665     	NACCMY - Lateral  distance from the tower-top to the nacelle CM (m) (HAWT only)
+4.2647  		NACCMZ - Vertical distance from the tower-top to the nacelle CM (m) (HAWT only)
+52470672.3024	NACYINER - Nacelle Yaw Inertia (kg*m^2) (HAWT only)
+120447.7022		HUBMASS - Hub Mass (kg)
+1882498.8833	HUBINER - Hub Inertia (kg*m^2)
+
+------------------------------- DRIVETRAIN MODEL --------------------------
+1				GBRATIO - gearbox ratio (N)
+1.0				GBOXEFF - gearbox efficiency (0-1)
+0.953			GENEFF - generator efficiency (0-1) 
+false			DRTRDOF - model drivetrain dynamics (true / false)
+3117597.5395	GENINER	- Generator side (HSS) Inertia (kg*m^2)
+1E+12 			DTTORSPR - Drivetrain torsional stiffness (N*m/rad)
+1E+9 			DTTORDMP - Drivetrain torsional damping (N*m*s/rad)
+
+------------------------------- NACELLE DRAG ------------------------------
+-7.00			NACCAX - Downwind distance from the tower-top to the nacelle CD (m) (HAWT only)
+0.0             NACCAY - Lateral  distance from the tower-top to the nacelle CD (m) (HAWT only)
+6.00          	NACCAZ - Vertical distance from the tower-top to the nacelle CD (m) (HAWT only)
+144.00          NACARX - Downwind area of the nacelle (m^2) (HAWT only)
+216.00          NACARY - Lateral  area of the nacelle (m^2) (HAWT only)
+0.0             NACARZ - Vertical area of the nacelle (m^2) (HAWT only)
+0.5             NACCDX - Downwind drag coefficient of the nacelle (-) (HAWT only)
+0.5             NACCDY - Lateral drag coefficient of the nacelle (-) (HAWT only)
+0.0             NACCDZ - Vertical drag coefficient of the nacelle (-) (HAWT only)
+
+------------------------------- BRAKE MODEL -------------------------------
+28116.2			BRKTORQUE - maximum brake torque
+0.6				BRKDEPLOY - brake deploy time (s) (only used with DTU style controllers)
+0.0				BRKDELAY - brake delay time (s) (only used with DTU style controllers)
+
+------------------------------- SENSOR ERRORS -----------------------------
+0				ERRORYAW - yaw error (deg) (HAWT only)
+0				ERRORPITCH_1 - pitch error blade1 (deg)
+0				ERRORPITCH_2 - pitch error blade2 (deg)
+0				ERRORPITCH_3 - pitch error blade3 (deg)
+
+------------------------------- BLADES ------------------------------------
+3								NUMBLD - Number of blades 
+IEA_22_280_RWT_Blade_FPM.str	BLDFILE_1 - Name of file containing properties for blade 1
+IEA_22_280_RWT_Blade_FPM.str	BLDFILE_2 - Name of file containing properties for blade 2
+IEA_22_280_RWT_Blade_FPM.str	BLDFILE_3 - Name of file containing properties for blade 3
+
+------------------------------- TOWER -------------------------------------
+149.386						TWRHEIGHT - Height of the tower (m)
+IEA_22_280_RWT_Tower.str	TWRFILE - Name of file containing properties for the tower
+
+------------------------------- SUBSTRUCTURE ------------------------------
+IEA_22_280_RWT_MONO_Sub.str	SUBFILE
+
+------------------------------- DATA OUTPUT TYPES -------------------------
+true			FOR_OUT - store (local) forces at all chosen locations 
+true			DEF_OUT - store (local) deflections at all chosen locations 
+false			POS_OUT - store (global) positions at all chosen locations 
+false			VEL_OUT - store (global) velocities at all chosen locations 
+false			ACC_OUT - store (global) accelerations at all chosen locations
+true			AER_OUT - store aerodynamic forces/moments
+
+------------------------------- DATA OUTPUT LOCATIONS ---------------------
+any number, or zero, user defined positions can be chosen as output locations. locations can be assigned at any of the following components:
+blades, struts, tower and guy cables. See the following examples for the used nomenclature:
+
+BLD_1_0.00
+BLD_1_0.02
+BLD_1_0.04
+BLD_1_0.06
+BLD_1_0.08
+BLD_1_0.10
+BLD_1_0.12
+BLD_1_0.14
+BLD_1_0.16
+BLD_1_0.18
+BLD_1_0.20
+BLD_1_0.22
+BLD_1_0.24
+BLD_1_0.26
+BLD_1_0.28
+BLD_1_0.30
+BLD_1_0.32
+BLD_1_0.34
+BLD_1_0.36
+BLD_1_0.38
+BLD_1_0.40
+BLD_1_0.42
+BLD_1_0.44
+BLD_1_0.46
+BLD_1_0.48
+BLD_1_0.50
+BLD_1_0.52
+BLD_1_0.54
+BLD_1_0.56
+BLD_1_0.58
+BLD_1_0.60
+BLD_1_0.62
+BLD_1_0.64
+BLD_1_0.66
+BLD_1_0.68
+BLD_1_0.70
+BLD_1_0.72
+BLD_1_0.74
+BLD_1_0.76
+BLD_1_0.78
+BLD_1_0.80
+BLD_1_0.82
+BLD_1_0.84
+BLD_1_0.86
+BLD_1_0.88
+BLD_1_0.90
+BLD_1_0.92
+BLD_1_0.94
+BLD_1_0.96
+BLD_1_0.98
+BLD_1_1.00
+
+

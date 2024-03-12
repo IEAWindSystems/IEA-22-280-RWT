@@ -94,7 +94,7 @@ Structure/IEA_22_280_RWT_MONO_Main.str   STRUCTURALFILE     - the input file for
 false                                    GEOMSTIFFNESS      - enable geometric stiffness, 0 = OFF, 1 = ON
 
 ----------------------------------------Turbine Controller-----------------------------------------------------------
-2                                        CONTROLLERTYPE     - the type of turbine controller 0 = none, 1 = BLADED, 2 = DTU, 3 = TUB
-dtu_we_controller_64                     CONTROLLERFILE     - the controller file name, WITHOUT file ending (.dll or .so ) - leave blank if unused
+2                                        	CONTROLLERTYPE     - the type of turbine controller 0 = none, 1 = BLADED, 2 = DTU, 3 = TUB
+dtu_we_controller_64                     	CONTROLLERFILE     - the controller file name, WITHOUT file ending (.dll or .so ) - leave blank if unused
 Control/dtu_we_Params_DTU_IEA_22MW_Mono.htc PARAMETERFILE      - the controller parameter file name (leave blank if unused)
 

@@ -1,8 +1,8 @@
 ----------------------------------------QBlade Turbine Definition File----------------------------------------------
 Generated with : QBlade IH v2.0.6.4-dev_beta windows
 Archive Format: 310019
-Time : 16:26:58
-Date : 12.03.2024
+Time : 14:09:14
+Date : 13.03.2024
 
 ----------------------------------------Object Name-----------------------------------------------------------------
 IEA-22-280-RWT-Monopile                  OBJECTNAME         - the name of the turbine object
@@ -39,10 +39,10 @@ IAGPARAMS           - the parameters for the IAG DS model, order according to do
 0.30 0.70 0.70 0.53 0.75 1.70 3.00 6.00 6.00 0.20 0.10 1.50 1.50 0.00 
 
 ----------------------------------------Aerodynamic Models----------------------------------------------------------
-true                                     UNSTEADYAERO       - include unsteady attached flow aerodynamics? (0 = OFF or 1 = ON)
-true                                     2PLIFTDRAG         - include the 2 point lift drag correction? (0 = OFF or 1 = ON)
-false                                    HIMMELSKAMP        - include the Himmelskamp Stall delay? (0 = OFF or 1 = ON) (HAWT only)
-true                                     TOWERSHADOW        - include the tower shadow effect (0 = OFF or 1 = ON)
+true                                     UNSTEADYAERO       - include unsteady attached flow aerodynamics? [bool]
+true                                     2PLIFTDRAG         - include the 2 point lift drag correction? [bool]
+false                                    HIMMELSKAMP        - include the Himmelskamp Stall delay? (HAWT only) [bool]
+true                                     TOWERSHADOW        - include the tower shadow effect [bool]
 0.50                                     TOWERDRAG          - the tower drag coefficient [-] (if a Structural Model is used the tower drag is defined in the tower input file)
 
 ----------------------------------------Wake Type------------------------------------------------------------------
@@ -51,9 +51,9 @@ true                                     TOWERSHADOW        - include the tower 
 ----------------------------------------Vortex Wake Parameters------------------------------------------------------
 Only used if waketype = 0
 0                                        WAKEINTTYPE        - the wake integration type: 0 = EF; 1 = PC; 2 = PC2B
-true                                     WAKEROLLUP         - calculate wake self-induction (0 = OFF or 1 = ON)
-true                                     TRAILINGVORT       - include trailing vortex elements (0 = OFF or 1 = ON)
-true                                     SHEDVORT           - include shed vortex elements (0 = OFF or 1 = ON)
+true                                     WAKEROLLUP         - calculate wake self-induction [bool]
+true                                     TRAILINGVORT       - include trailing vortex elements [bool]
+true                                     SHEDVORT           - include shed vortex elements [bool]
 0                                        CONVECTIONTYPE     - the wake convection type (0 = BL, 1 = HH, 2 = LOC)
 1.00                                     WAKERELAXATION     - the wake relaxation factor [0-1]
 1.00                                     FIRSTWAKEROW       - first wake row length [-]
@@ -75,7 +75,7 @@ Only used if waketype = 0
 0.05                                     BOUNDCORERADIUS    - the fixed core radius of the bound blade vortex (fraction of local chord) [0-1]
 0.05                                     WAKECORERADIUS     - the intial core radius of the free wake vortex (fraction of local chord) [0-1]
 1040.00                                  VORTEXVISCOSITY    - the turbulent vortex viscosity
-false                                    VORTEXSTRAIN       - calculate vortex strain 0 = OFF, 1 = ON
+false                                    VORTEXSTRAIN       - calculate vortex strain [bool]
 50                                       MAXSTRAIN          - the maximum element strain, before elements are removed from the wake [-]
 
 ----------------------------------------Gamma Iteration Parameters--------------------------------------------------
@@ -86,15 +86,15 @@ Only used if waketype = 0
 
 ----------------------------------------Unsteady BEM Parameters------------------------------------------------------
 12                                       POLARDISC          - the polar discretization for the unsteady BEM (integer!) [-]
-true                                     BEMTIPLOSS         - use BEM tip loss factor, 0 = OFF, 1 = ON
+true                                     BEMTIPLOSS         - use BEM tip loss factor [bool]
 0.00                                     BEMSPEEDUP         - initial BEM convergence acceleration time [s]
 
 ----------------------------------------Structural Model-------------------------------------------------------------
 Structure/IEA_22_280_RWT_MONO_Main.str   STRUCTURALFILE     - the input file for the structural model (leave blank if unused)
-false                                    GEOMSTIFFNESS      - enable geometric stiffness, 0 = OFF, 1 = ON
+false                                    GEOMSTIFFNESS      - enable geometric stiffness [bool]
 
 ----------------------------------------Turbine Controller-----------------------------------------------------------
-2                                        	CONTROLLERTYPE     - the type of turbine controller 0 = none, 1 = BLADED, 2 = DTU, 3 = TUB
-dtu_we_controller_64                     	CONTROLLERFILE     - the controller file name, WITHOUT file ending (.dll or .so ) - leave blank if unused
-Control/dtu_we_Params_DTU_IEA_22MW_Mono.htc PARAMETERFILE      - the controller parameter file name (leave blank if unused)
+2                                            CONTROLLERTYPE     - the type of turbine controller 0 = none, 1 = BLADED, 2 = DTU, 3 = TUB
+dtu_we_controller_64                         CONTROLLERFILE     - the controller file name, WITHOUT file ending (.dll or .so ) - leave blank if unused
+Control/dtu_we_Params_DTU_IEA_22MW_Mono.htc  PARAMETERFILE      - the controller parameter file name (leave blank if unused)
 

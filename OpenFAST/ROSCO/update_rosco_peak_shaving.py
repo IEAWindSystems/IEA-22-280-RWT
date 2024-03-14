@@ -3,12 +3,12 @@ Update the DISCON.IN examples in the IEA-22MW repository using tuning .yamls in 
 
 '''
 import os
-from ROSCO_toolbox.ofTools.fast_io.update_discons import update_discons
+from rosco.toolbox.ofTools.fast_io.update_discons import update_discons
 import numpy as np
-from ROSCO_toolbox.tune import yaml_to_objs
+from rosco.toolbox.tune import yaml_to_objs
 import matplotlib.pyplot as plt
-from ROSCO_toolbox.ofTools.util.FileTools import save_yaml
-from ROSCO_toolbox.inputs.validation import load_rosco_yaml
+from rosco.toolbox.ofTools.util.FileTools import save_yaml
+from rosco.toolbox.inputs.validation import load_rosco_yaml
 import pandas as pd
 
 

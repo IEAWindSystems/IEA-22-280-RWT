@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10944127.svg)](https://doi.org/10.5281/zenodo.10944127)
+
 # IEA-22-280-RWT
 This repository contains the model data for the 22-MW offshore reference turbine developed within IEA Wind Task 55 [REFWIND](https://iea-wind.org/task55/).
 
@@ -26,7 +28,7 @@ Data in this repository includes:
 
 ## Citations
 
-If you use this model in your research or publications, please cite the following report as:
+If you use this model in your research or publications, please cite:
 
 Zahle, F., Barlas, A., Lønbæk, K., Bortolotti, P., Zalkind, D., Wang, L., Labuschagne, C., Sethuraman, L., & Barter, G. (2024). Definition of the IEA Wind 22-Megawatt Offshore Reference Wind Turbine. Technical University of Denmark, International Energy Agency. DTU Wind Report E-0243, https://doi.org/10.11581/DTU.00000317
 
@@ -39,6 +41,27 @@ Zahle, F., Barlas, A., Lønbæk, K., Bortolotti, P., Zalkind, D., Wang, L., Labu
     isbn = {978-87-87335-71-3},
     year = 2024
 }
+
+@dataset{iea22mwrwt-dataset,
+  author       = {Zahle, Frederik and
+                  Barlas, Thanasis and
+                  Lønbæk, Kenneth and
+                  Bortolotti, Pietro and
+                  Zalkind, Daniel and
+                  Lu Wang and
+                  Labuschagne, Casper and
+                  Sethuraman, Latha and
+                  Garrett Barter and
+                  Marten, David},
+  title        = {IEAWindTask37/IEA-22-280-RWT: v1.0.1},
+  month        = apr,
+  year         = 2024,
+  publisher    = {Zenodo},
+  version      = {v1.0.1},
+  doi          = {10.5281/zenodo.10944127},
+  url          = {https://doi.org/10.5281/zenodo.10944127}
+}
+
 ```
 
 

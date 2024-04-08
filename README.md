@@ -24,23 +24,34 @@ Data in this repository includes:
  * WISDEM can be installed from its Github [repository](https://github.com/WISDEM/WISDEM).
  * See the [documentation](https://wisdem.readthedocs.io) for installation and usage guides.
 
+## Citations
 
-## Large files are tracked using Git LFS 
+If you use this model in your research or publications, please cite the following report as:
 
-The repository contains a variety of large files, for example the cross-sectional meshes used to generate the stiffness and inertia matrices in the WindIO file.
-These files are tracked using Git LFS, so to retrieve these files when cloning the repository you need to install Git LFS on your local machine, see https://git-lfs.com/. 
+Zahle, F., Barlas, T., Lønbæk, K., Bortolotti, P., Zalkind, D., Wang, L., Labuschagne, C., Sethuraman, L., & Barter, G. (Accepted/In press). Definition of the IEA Wind 22-Megawatt Offshore Reference Wind Turbine. Technical University of Denmark. https://doi.org/10.11581/DTU.00000317
+
+```
+@techreport{iea22mwrwt,
+    author = {Zahle, Frederik and Barlas, Athanasios and Lønbæk, Kenneth and Bortolotti, Pietro and Zalkind, Daniel and Wang, Lu and Labuschagne, Casper and Sethuraman, Latha and Barter, Garrett},
+    title = "{Definition of the IEA Wind 22-Megawatt Offshore Reference Wind Turbine}",
+    institution = "DTU Wind and Energy Systems, International Energy Agency",
+    number = {DTU Wind Report E-0243, https://doi.org/10.11581/DTU.00000317},
+    isbn = {978-87-87335-71-3},
+    year = 2024
+}
+```
 
 
 ## Community Contributions
 
-The authors of the IEA 22 hope that the turbine is used widely. Notable studies adopting the turbine will be listed here, together with models of the turbine implemented in other codes:
+The authors of the IEA 22 MW RWT hope that the turbine is used widely. Notable studies adopting the turbine will be listed here, together with models of the turbine implemented in other codes:
 
 * A DNVGL Bladed model was developed by [DNV](mailto:renewables.support@dnv.com) and is available upon reasonable request.
-* A [QBlade](https://qblade.org) model was developed by researchers at [TU Berlin](https://qblade.org/contact/) and is available upon reasonable request.
+* A [QBlade](https://qblade.org) model was developed by researchers at [TU Berlin](https://qblade.org/contact/) and is available in this repository. 
 
 ## Acknowledgments
 
-The IEA 22 offshore reference wind turbine was made possible thanks to countless inputs from a long list of collaborators. A non exhaustive list includes Mayank Chetan and Emmanuel Branlard at NREL, William Collier and Dilek Ors at DNVGL, David Marten at TU Berlin, and Georg Pirrung and Katherine Dykes at DTU.
+The IEA 22 offshore reference wind turbine was made possible thanks to countless inputs from a long list of collaborators. A non exhaustive list includes Mayank Chetan and Emmanuel Branlard at NREL, William Collier and Dilek Ors at DNVGL, David Marten at TU Berlin, and Georg Pirrung, David Verelst and Katherine Dykes at DTU.
 DTU's participation in IEA Wind Task 37 and Task 55 is sponsored by the Danish Energy Agency under contract no. EUDP-64019-0588 and EUDP-134234-512032.
 We also wish to acknowledge Equinor for sponsoring a co-financed research project, which formed the basis for the IEA 22 MW RWT rotor design.
 A portion of this research was performed using computational resources sponsored by the Department of Energy's Office of Energy Efficiency and Renewable Energy and located at the National Renewable Energy Laboratory. This work was authored in part by the National Renewable Energy Laboratory, operated by Alliance for Sustainable Energy, LLC, for the U.S. Department of Energy (DOE) under Contract No. DE-AC36-08GO28308. Funding provided by the U.S. Department of Energy Office of Energy Efficiency and Renewable Energy, Wind Energy Technologies Office. 

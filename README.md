@@ -1,7 +1,7 @@
 # IEA-22-280-RWT
 This repository contains the model data for the 22-MW offshore reference turbine developed within IEA Wind Task 55 [REFWIND](https://iea-wind.org/task55/).
 
-The documentation for the turbine is in progress.
+The documentation for the turbine is available here: https://doi.org/10.11581/DTU.00000317.
 
 Data in this repository includes:
 * Documentation, including tabular data used in the figures from the technical report
@@ -28,13 +28,13 @@ Data in this repository includes:
 
 If you use this model in your research or publications, please cite the following report as:
 
-Zahle, F., Barlas, T., Lønbæk, K., Bortolotti, P., Zalkind, D., Wang, L., Labuschagne, C., Sethuraman, L., & Barter, G. (Accepted/In press). Definition of the IEA Wind 22-Megawatt Offshore Reference Wind Turbine. Technical University of Denmark. https://doi.org/10.11581/DTU.00000317
+Zahle, F., Barlas, A., Lønbæk, K., Bortolotti, P., Zalkind, D., Wang, L., Labuschagne, C., Sethuraman, L., & Barter, G. (2024). Definition of the IEA Wind 22-Megawatt Offshore Reference Wind Turbine. Technical University of Denmark, International Energy Agency. DTU Wind Report E-0243, https://doi.org/10.11581/DTU.00000317
 
 ```
 @techreport{iea22mwrwt,
     author = {Zahle, Frederik and Barlas, Athanasios and Lønbæk, Kenneth and Bortolotti, Pietro and Zalkind, Daniel and Wang, Lu and Labuschagne, Casper and Sethuraman, Latha and Barter, Garrett},
     title = "{Definition of the IEA Wind 22-Megawatt Offshore Reference Wind Turbine}",
-    institution = "DTU Wind and Energy Systems, International Energy Agency",
+    institution = "Technical University of Denmark, International Energy Agency",
     number = {DTU Wind Report E-0243, https://doi.org/10.11581/DTU.00000317},
     isbn = {978-87-87335-71-3},
     year = 2024

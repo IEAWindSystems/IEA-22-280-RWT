@@ -69,8 +69,10 @@ Zahle, F., Barlas, A., Lønbæk, K., Bortolotti, P., Zalkind, D., Wang, L., Labu
 
 The authors of the IEA 22 MW RWT hope that the turbine is used widely. Notable studies adopting the turbine will be listed here, together with models of the turbine implemented in other codes:
 
-* A DNVGL Bladed model was developed by [DNV](mailto:renewables.support@dnv.com) and is available upon reasonable request.
+*  A Bladed model was developed by [DNV](mailto:renewables.support@dnv.com) and is available as part of the Bladed v4.16 installation. DNV have also written a Python [converter tool](https://dnvgldocs.azureedge.net/BladedManual/4_16/workflow/preProcessingTools/WindIOtoBladed.html) for the WindIO blade definition to Bladed format for the IEA 22 MW RWT.
 * A [QBlade](https://qblade.org) model was developed by researchers at [TU Berlin](https://qblade.org/contact/) and is available in this repository. 
+* An OrcaFlex model of the [v1.0.1](https://github.com/IEAWindTask37/IEA-22-280-RWT/releases/tag/v1.0.1) of the 22 MW rotor, nacelle, and tower (no foundation) was developed by Orcina and verified against OpenFAST. A report is available in the validation [page](https://www.orcina.com/resources/validation/) of Orcina. Orcina is working on a model of the floating turbine. 
+
 
 ## Acknowledgments
 

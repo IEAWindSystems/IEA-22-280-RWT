@@ -5,11 +5,9 @@ False                  Echo        - Echo input data to "<rootname>.SD.ech" (fla
 DEFAULT                SDdeltaT    - Local Integration Step. If "default", the glue-code integration step will be used.
 3                      IntMethod   - Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
 True                   SttcSolve   - Solve dynamics about static equilibrium point
-False                  GuyanLoadCorrection - Include extra moment from lever arm at interface and rotate FEM for floating.
 -------------------- FEA and CRAIG-BAMPTON PARAMETERS---------------------------
 3                      FEMMod      - FEM switch: element model in the FEM. [1= Euler-Bernoulli(E-B);  2=Tapered E-B (unavailable);  3= 2-node Timoshenko;  4= 2-node tapered Timoshenko (unavailable)]
 1                      NDiv        - Number of sub-elements per member
-True                   CBMod       - [T/F] If True perform C-B reduction, else full FEM dofs will be retained. If True, select Nmodes to retain in C-B reduced system.
 0                      Nmodes      - Number of internal modes to retain (ignored if CBMod=False). If Nmodes=0 --> Guyan Reduction.
 1.                     JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
 1                      GuyanDampMod - Guyan damping {0=none, 1=Rayleigh Damping, 2=user specified 6x6 matrix}.
@@ -58,8 +56,8 @@ True                   CBMod       - [T/F] If True perform C-B reduction, else f
      7           7           8           7           7           1     
      8           8           9           8           8           1     
      9           9          10           9           9           1     
------------------- MEMBER X-SECTION PROPERTY data 1/2 [isotropic material for now: use this table for circular-tubular elements] ------------------------
-9                      NPropSets   - Number of structurally unique x-sections (i.e. how many groups of X-sectional properties are utilized throughout all of the members)
+------------------ CIRCULAR BEAM CROSS-SECTION PROPERTIES -----------------------------
+             9   NPropSets   - Number of structurally unique cross-sections
  PropSetID    YoungE      ShearG1     MatDens      XsecD       XsecT   
     (-)       (N/m2)      (N/m2)      (kg/m3)       (m)         (m)    
      1      2.000000e+11 7.930000e+10  7850.0       10.0     0.08987873979876987
@@ -71,7 +69,7 @@ True                   CBMod       - [T/F] If True perform C-B reduction, else f
      7      2.000000e+11 7.930000e+10  7850.0       10.0     0.07395899287278722
      8      2.000000e+11 7.930000e+10  7850.0       10.0     0.07235600998593704
      9      2.000000e+11 7.930000e+10  7850.0       10.0     0.06966911419770228
------------------- MEMBER X-SECTION PROPERTY data 2/2 [isotropic material for now: use this table if any section other than circular, however provide COSM(i,j) below] ------------------------
+----------------- ARBITRARY BEAM CROSS-SECTION PROPERTIES -----------------------------
 0                      NXPropSets  - Number of structurally unique non-circular x-sections (if 0 the following table is ignored)
  PropSetID    YoungE      ShearG2     MatDens      XsecA      XsecAsx     XsecAsy     XsecJxx     XsecJyy     XsecJ0   
     (-)       (N/m2)      (N/m2)      (kg/m3)      (m2)        (m2)        (m2)        (m4)        (m4)        (m4)    
@@ -83,7 +81,11 @@ True                   CBMod       - [T/F] If True perform C-B reduction, else f
 0                      NRigidPropSets - Number of rigid link properties
  PropSetID    MatDens  
     (-)       (kg/m)   
----------------------- MEMBER COSINE MATRICES COSM(i,j) ------------------------
+----------------------- SPRING ELEMENT PROPERTIES -------------------------------------
+             0   NSpringPropSets - Number of spring properties
+PropSetID   k11     k12     k13     k14     k15     k16     k22     k23     k24     k25     k26     k33     k34     k35     k36     k44      k45      k46      k55      k56      k66    
+  (-)      (N/m)   (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)  (N/rad) (N/rad) (N/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad)
+---------------------- MEMBER COSINE MATRICES COSM(i,j) -------------------------------
 0                      NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
   COSMID      COSM11      COSM12      COSM13      COSM21      COSM22      COSM23      COSM31      COSM32      COSM33   
     (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)    
@@ -94,6 +96,8 @@ True                   CBMod       - [T/F] If True perform C-B reduction, else f
     10       100000.0    1250000.0   1250000.0   2500000.0      0.0         0.0         0.0         0.0         0.0         0.0    
 ---------------------------- OUTPUT: SUMMARY & OUTFILE ------------------------------
 False                  SumPrint    - Output a Summary File (flag).It contains: matrices K,M  and C-B reduced M_BB, M-BM, K_BB, K_MM(OMG^2), PHI_R, PHI_L. It can also contain COSMs if requested.
+0                OutCBModes  - Output Guyan and Craig-Bampton modes {0: No output, 1: JSON output}, (flag)
+0                OutFEMModes - Output first 30 FEM modes {0: No output, 1: JSON output} (flag)
 False                  OutCOSM     - Output cosine matrices with the selected output member forces (flag)
 False                  OutAll      - [T/F] Output all members' end forces
 2                      OutSwtch    - [1/2/3] Output requested channels to: 1=<rootname>.SD.out;  2=<rootname>.out (generated by FAST);  3=both files.

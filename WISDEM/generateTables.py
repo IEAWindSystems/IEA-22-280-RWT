@@ -76,6 +76,57 @@ def vabs_load(fname):
     return A, r
 
 
+def read_rotor_performance_yaml(fname):
+    data = load_yaml(fname)
+
+    cases = data['cases']
+    n_ws = len(cases)
+
+    col_rename = {'wind_speed':'Wind Speed [m/s]',
+                  'rotor_speed':'Rotor Speed [rpm]',
+                  'pitch':'Pitch [deg]',
+                  'tip_speed_ratio':'TSR',
+                  'mechanical_power':'Mech Power [kW]',
+                  'electrical_power':'Elec Power [kW]',
+                  'generator_torque':'Generator Torque [kNm]',
+                  'rotor_thrust':'Rotor Thrust [kN]',
+                  'rotor_torque':'Rotor Torque [kNm]'}
+    
+    # Read each run configuration
+    configuration_keys = list(data["cases"][0]["configuration"].keys())
+    col_labels = configuration_keys[:]
+    config_data = np.zeros((n_ws, len(configuration_keys)))
+    for ik, k in enumerate(configuration_keys):
+        config_data[:,ik] = [c["configuration"][k] for c in cases]
+
+    # Read steady state integrated values
+    integrated_keys = list(data["cases"][0]["outputs"]["integrated"].keys())
+    col_labels += integrated_keys
+    integrated_data = np.zeros((n_ws, len(integrated_keys)))
+    for ik, k in enumerate(integrated_keys):
+        coeff = 1.0
+        if k.lower().find('power') >= 0 or k.lower().find('torque') >= 0:
+            coeff = 1e-3
+        integrated_data[:,ik] = [coeff * c["outputs"]["integrated"][k] for c in cases]
+
+    # Create DataFrame for data so far
+    rotDF = pd.DataFrame(np.hstack((config_data, integrated_data)), columns=col_labels)
+    rotDF.rename(columns = col_rename, inplace=True)
+    
+    # Read steady state distributed data along span
+    rotDF_dist = []
+    distributed_keys = list(data["cases"][0]["outputs"]["distributed"].keys())
+    for ic, c in enumerate(cases):
+        igrid = c["outputs"]["distributed"][distributed_keys[0]]['grid']
+        distributed_data = np.zeros((len(igrid), 1+len(distributed_keys)))
+        distributed_data[:,0] = igrid
+        for ik, k in enumerate(distributed_keys):
+            distributed_data[:,ik+1] = c["outputs"]["distributed"][k]['values']
+        rotDF_dist.append( pd.DataFrame(distributed_data, columns=['Spanwise grid']+distributed_keys) )
+        
+    return rotDF, rotDF_dist
+
+
 class RWT_Tabular(object):
     def __init__(self, finput, towDF=None, rotDF=None, layerDF=None, nacDF=None, overview=None):
         
@@ -88,7 +139,7 @@ class RWT_Tabular(object):
         froot, _      = os.path.splitext( fname )
         self.fout     = folder_output + os.sep + froot + '_tabular.xlsx'
 
-        # If provided, store blade, tower, and rotor data
+        # If provided, store blade, tower, and rotor data from WISDEM
         self.towDF   = towDF
         self.rotDF   = rotDF
         self.layerDF = layerDF
@@ -812,49 +863,63 @@ class RWT_Tabular(object):
             
     
     def write_rotor_performance(self):
-        ws = self.wb.create_sheet(title = 'Rotor Performance')
+        if self.rotDF is not None:
+            # WISDEM Rotor Performance
+            ws = self.wb.create_sheet(title = 'Rotor Performance - WISDEM')
 
-        # Use OpenFAST output if it is available
-        foutput = '..'+os.sep+'OpenFAST'+os.sep+'outputs'+os.sep+'IEA-22-280-RWT_steady.yaml'
-        if os.path.exists(foutput):
-            fastout = load_yaml(foutput)
-
-            rotmat = np.c_[fastout['Wind1VelX']['mean'],
-                           fastout['BldPitch1']['mean'],
-                           1e-3*np.array(fastout['GenPwr']['mean']),
-                           fastout['RotSpeed']['mean'],
-                           120.0*np.array(fastout['RotSpeed']['mean'])*2*np.pi/60.0,
-                           1e-3*np.array(fastout['RotThrust']['mean']),
-                           1e-3*np.array(fastout['RotTorq']['mean']),
-                           1e-3*np.array(fastout['GenTq']['mean']),
-                           fastout['RtAeroCp']['mean'],
-                           fastout['RtAeroCt']['mean']]
-            cols = ['Wind [m/s]',
-                    'Pitch [deg]',
-                    'Power [MW]',
-                    'Rotor Speed [rpm]',
-                    'Tip Speed [m/s]',
-                    'Rotor Thrust [MN]',
-                    'Rotor Torque [MNm]',
-                    'Generator Torque [MNm]',
-                    'Rotor Cp [-]',
-                    'Rotor Ct [-]']
-            myDF = pd.DataFrame(rotmat, columns=cols)
-            
-        elif not self.rotDF is None:
-            # Use WISDEM output
-            myDF = self.rotDF
-
-        else:
-            return
-
-        # Write to the file
-        for r in dataframe_to_rows(myDF, index=False, header=True):
-            ws.append(r)
+            # Write to the file
+            for r in dataframe_to_rows(self.rotDF, index=False, header=True):
+                ws.append(r)
         
-        # Header row style formatting
-        for cell in ws["1:1"]:
-            cell.style = 'Headline 2'
+            # Header row style formatting
+            for cell in ws["1:1"]:
+                cell.style = 'Headline 2'
+
+        def write_yaml_data(rotDF, rotDF_dist, fname):
+            # Rotor Performance
+            ws = self.wb.create_sheet(title = f'Rotor Performance - {fname}')
+
+            # Write to the file
+            rotDF, rotDF_dist = read_rotor_performance_yaml(fname_hawc2)
+            for r in dataframe_to_rows(rotDF, index=False, header=True):
+                ws.append(r)
+            
+            # Header row style formatting
+            for cell in ws["1:1"]:
+                cell.style = 'Headline 2'
+
+            # Write distributed data
+            row_start = 3+len(rotDF)
+            for iws in range(len(rotDF_dist)):
+                # Reynolds number label
+                labstr = 'Wind Speed [m/s]'
+                ws.cell(row=row_start, column=1, value=labstr)
+                ws.cell(row=row_start, column=2, value=rotDF[labstr].iloc[iws])
+
+                # Append to worksheet
+                for r in dataframe_to_rows(rotDF_dist[iws], index=False, header=True):
+                    ws.append(r)
+
+                # Header row style formatting
+                for cell in ws[str(row_start)+':'+str(row_start)]:
+                    cell.style = 'Headline 1'
+                for cell in ws[str(row_start+1)+':'+str(row_start+1)]:
+                    cell.style = 'Headline 2'
+                    
+                # Prep for next polar
+                row_start += len(rotDF_dist[iws]) + 4
+            
+        # Grab OF/HAWC2 data
+        fname_hawc2 = os.path.join('..','outputs','01_steady_states','HAWC2','iea-22-280-rwt-steady-states-hawc2.yaml')
+        fname_of    = os.path.join('..','outputs','01_steady_states','OpenFAST','iea-22-280-rwt-steady-states-of.yaml')
+        
+        if os.path.exists(fname_hawc2):
+            rotDF_hawc2, rotDF_dist_hawc2 = read_rotor_performance_yaml(fname_hawc2)
+            write_yaml_data(rotDF_hawc2, rotDF_dist_hawc2, 'HAWC2')
+        
+        if os.path.exists(fname_of):
+            rotDF_of, rotDF_dist_of = read_rotor_performance_yaml(fname_of)
+            write_yaml_data(rotDF_of, rotDF_dist_of, 'OpenFAST')
 
 
     def write_nacelle(self):

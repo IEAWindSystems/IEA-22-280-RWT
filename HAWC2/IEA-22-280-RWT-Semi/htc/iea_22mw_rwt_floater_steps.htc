@@ -116,7 +116,6 @@ begin new_htc_structure;
     end  timoschenko_input ;
     begin  c2_def ;
       nsec 3 ;
-      nsec 3 ;
       sec  1  0.0e+00  0.0e+00 0.0e+00  0.0e+00 ;
       sec  2  0.0e+00  0.0e+00 32.0e+00  0.0e+00 ;
       sec  3  0.0e+00  0.0e+00 40.0e+00  0.0e+00 ;

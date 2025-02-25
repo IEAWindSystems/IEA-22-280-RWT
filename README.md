@@ -64,6 +64,16 @@ Zahle, F., Barlas, A., Lønbæk, K., Bortolotti, P., Zalkind, D., Wang, L., Labu
 
 ```
 
+## Large data files and high-fidelity models
+
+Large data files are not stored in the present repository, since Git LFS is not free on GitHub.
+Files are therefore stored in the following repository:
+https://gitlab.windenergy.dtu.dk/iea-22-280-rwt/iea-22-280-rwt-data
+
+With the following content:
+
+* structural_models/BECAS: BECAS cross-sectional meshes for 2D structural modelling of the blade.
+
 
 ## Community Contributions
 

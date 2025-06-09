@@ -81,8 +81,8 @@ The authors of the IEA 22 MW RWT hope that the turbine is used widely. Notable s
 
 *  A Bladed model was developed by [DNV](mailto:renewables.support@dnv.com) and is available as part of the Bladed v4.16 installation. DNV have also written a Python [converter tool](https://dnvgldocs.azureedge.net/BladedManual/4_16/workflow/preProcessingTools/WindIOtoBladed.html) for the WindIO blade definition to Bladed format for the IEA 22 MW RWT.
 * A [QBlade](https://qblade.org) model was developed by researchers at [TU Berlin](https://qblade.org/contact/) and is available in this repository. 
-* An OrcaFlex model of the [v1.0.1](https://github.com/IEAWindTask37/IEA-22-280-RWT/releases/tag/v1.0.1) 22 MW rotor, nacelle, and tower (no foundation) was developed by Orcina and verified against OpenFAST. The report and model are available on the validation [page](https://www.orcina.com/resources/validation/) of the Orcina website. 
-
+* An OrcaFlex model of the [v1.0.1](https://github.com/IEAWindTask37/IEA-22-280-RWT/releases/tag/v1.0.1) 22 MW rotor, nacelle, and tower (no foundation) was developed by Orcina and verified against OpenFAST. The report and model are available on the validation [page](https://www.orcina.com/resources/validation/) of the Orcina website.
+* A Flexcom model of the 22MW turbine and supporting tower was built by Wood. The [documentation](https://flexcom.fea.solutions/l06---iea-22mw-rwt.html) presents a code-to-code comparison of OpenFAST, OrcaFlex and Flexcom models, covering steady, stepped and turbulent wind cases. The model and sample results are [publicly available](https://downloads.fea.solutions/flexcom/PublicModels/Example%20L06%20-%20IEA%2022MW%20RWT.zip). If you do not have access to a Flexcom licence, you may still examine the model and results using the Flexcom [demo](https://downloads.fea.solutions/flexcom/latestversion.html) version.
 
 ## Acknowledgments
 

@@ -18,8 +18,8 @@ dependencies:
   - mock
   - numexpr
   - numpy
-  - openfast>=4.1.0
-  - openfast-io>=4.1.0
+  - openfast==4.1.2
+  - openfast-io==4.1.2
   - openpyxl
   - pandas
   - paramiko

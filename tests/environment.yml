@@ -18,7 +18,8 @@ dependencies:
   - mock
   - numexpr
   - numpy
-  - openfast
+  - openfast>=4.1.0
+  - openfast-io>=4.1.0
   - openpyxl
   - pandas
   - paramiko
@@ -29,13 +30,15 @@ dependencies:
   - psutil
   - pbr
   - pytables
-  - rosco==2.9.0
+  - rosco>=2.10.1
   - sshtunnel
   - simpy
   - tomli
-  - wisdem
+  - wisdem>=4.1
   - xlrd
   - xlwt
   - pip:
     - wetb
-    - marmot-agents
+    - orbit-nrel>=1.2.1
+    - windIO>=2.1.1
+    - wombat

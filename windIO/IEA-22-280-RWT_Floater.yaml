@@ -1833,5 +1833,5 @@ control:
     pitch_actuator_frequency: 6.2831
     pitch_actuator_damping: 0.707
     yaw_rate: 0.49847328176381617
-    max_allowable_blade_tip_speed: 95.0
-    peak_thrust_shaving: 1.0
+    max_allowable_blade_tip_speed: 105.0
+    peak_thrust_shaving: 0.8

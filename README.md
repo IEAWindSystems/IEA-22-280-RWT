@@ -64,6 +64,8 @@ Zahle, F., Barlas, A., Lønbæk, K., Bortolotti, P., Zalkind, D., Wang, L., Labu
 
 ```
 
+Studies using the floating variant of the reference as of v1.1 should also cite [this work](https://arxiv.org/abs/2601.01657), which is mentioned in the next section.
+
 ## Large data files and high-fidelity models
 
 Large data files are not stored in the present repository, since Git LFS is not free on GitHub.
@@ -79,7 +81,8 @@ With the following content:
 
 The authors of the IEA 22 MW RWT hope that the turbine is used widely. Notable studies adopting the turbine will be listed here, together with models of the turbine implemented in other codes:
 
-*  A Bladed model was developed by [DNV](mailto:renewables.support@dnv.com) and is available as part of the Bladed v4.16 installation. DNV have also written a Python [converter tool](https://dnvgldocs.azureedge.net/BladedManual/4_16/workflow/preProcessingTools/WindIOtoBladed.html) for the WindIO blade definition to Bladed format for the IEA 22 MW RWT.
+* The MIT-Portugal-Delft team redesigned the tower for the floating platform to better account for fatigue using WISDEM in conjunction with an AI-based fatigue surrogate model.  See [here](https://arxiv.org/abs/2601.01657) for the associated paper and [here](https://github.com/Joao97ribeiro/FLOAT) for the software model.
+* A Bladed model was developed by [DNV](mailto:renewables.support@dnv.com) and is available as part of the Bladed v4.16 installation. DNV have also written a Python [converter tool](https://dnvgldocs.azureedge.net/BladedManual/4_16/workflow/preProcessingTools/WindIOtoBladed.html) for the WindIO blade definition to Bladed format for the IEA 22 MW RWT.
 * A [QBlade](https://qblade.org) model was developed by researchers at [TU Berlin](https://qblade.org/contact/) and is available in this repository. 
 * An [OrcaFlex](https://www.orcina.com/orcaflex/) model of the [v1.0.1](https://github.com/IEAWindTask37/IEA-22-280-RWT/releases/tag/v1.0.1) 22 MW rotor, nacelle, and tower (no foundation) was developed by [Orcina](https://www.orcina.com) and verified against OpenFAST. The report and model are available on the validation [page](https://www.orcina.com/resources/validation/) of the Orcina website.
 * A [Flexcom](https://www.woodplc.com/solutions/expertise/flexcom) model of the 22MW turbine and supporting tower was built by [Wood](https://www.woodplc.com). The [documentation](https://flexcom.fea.solutions/l06---iea-22mw-rwt.html) presents a code-to-code comparison of OpenFAST, OrcaFlex and Flexcom models, covering steady, stepped and turbulent wind cases. The model and sample results are [publicly available](https://downloads.fea.solutions/flexcom/PublicModels/Example%20L06%20-%20IEA%2022MW%20RWT.zip). If you do not have access to a Flexcom licence, you may still examine the model and results using the Flexcom [demo](https://downloads.fea.solutions/flexcom/latestversion.html) version.

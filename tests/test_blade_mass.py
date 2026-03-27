@@ -32,7 +32,7 @@ class TestBladeMass(unittest.TestCase):
         readBD1.fst_vt['Fst']['BDBldFile(1)'] = base_name1 + '_BeamDyn.dat'
         bd_file = os.path.join(BDtw_path, readBD1.fst_vt['Fst']['BDBldFile(1)'])
         readBD1.read_BeamDyn(bd_file)
-        BDtw = np.trapz(readBD1.fst_vt['BeamDynBlade']['beam_inertia'][:,0,0], readBD1.fst_vt['BeamDynBlade']['radial_stations']*blade_length)
+        BDtw = np.trapezoid(readBD1.fst_vt['BeamDynBlade']['beam_inertia'][:,0,0], readBD1.fst_vt['BeamDynBlade']['radial_stations']*blade_length)
         print('\nBlade mass in BD along twist centers ', BDtw)
         self.assertAlmostEqual(BDtw/ref_blade_mass,1., places=3)
 
@@ -50,7 +50,7 @@ class TestBladeMass(unittest.TestCase):
     #     readBD2.fst_vt['Fst']['BDBldFile(1)'] = base_name1 + '_BeamDyn_c2.dat'
     #     bd_file2 = os.path.join(BDc2_path, readBD2.fst_vt['Fst']['BDBldFile(1)'])
     #     readBD2.read_BeamDyn(bd_file2)
-    #     BDc2 = np.trapz(readBD2.fst_vt['BeamDynBlade']['beam_inertia'][:,0,0], readBD2.fst_vt['BeamDynBlade']['radial_stations']*blade_length)
+    #     BDc2 = np.trapezoid(readBD2.fst_vt['BeamDynBlade']['beam_inertia'][:,0,0], readBD2.fst_vt['BeamDynBlade']['radial_stations']*blade_length)
     #     print('\nBlade mass in BD along mid chord ', BDc2)
     #     self.assertAlmostEqual(BDc2/ref_blade_mass,1., places=3)
 
@@ -63,7 +63,7 @@ class TestBladeMass(unittest.TestCase):
         readED.fst_vt['ElastoDyn']['BldFile1'] = base_name1 + '_ElastoDyn_blade.dat'
         ed_file = os.path.join(BDtw_path, readED.fst_vt['ElastoDyn']['BldFile1'])
         readED.read_ElastoDynBlade(ed_file)
-        ED = np.trapz(readED.fst_vt['ElastoDynBlade']['BMassDen'], np.array(readED.fst_vt['ElastoDynBlade']['BlFract'])*blade_length)
+        ED = np.trapezoid(readED.fst_vt['ElastoDynBlade']['BMassDen'], np.array(readED.fst_vt['ElastoDynBlade']['BlFract'])*blade_length)
         print('\nBlade mass in ED ', ED)
         self.assertAlmostEqual(ED/ref_blade_mass_ED,1., places=3)
 
@@ -90,9 +90,9 @@ class TestBladeMass(unittest.TestCase):
         
     #     f.close()
 
-    #     blade_mass_H2FPM = np.trapz(h2FPM[:,1], h2FPM[:,0])
-    #     blade_mass_H2noFPM = np.trapz(h2noFPM[:,1], h2noFPM[:,0])
-    #     blade_mass_H2noFPMrigid = np.trapz(h2noFPM_rigid[:,1], h2noFPM_rigid[:,0])
+    #     blade_mass_H2FPM = np.trapezoid(h2FPM[:,1], h2FPM[:,0])
+    #     blade_mass_H2noFPM = np.trapezoid(h2noFPM[:,1], h2noFPM[:,0])
+    #     blade_mass_H2noFPMrigid = np.trapezoid(h2noFPM_rigid[:,1], h2noFPM_rigid[:,0])
     #     print('\nBlade mass in H2 with fully populated matrices ', blade_mass_H2FPM)
     #     print('\nBlade mass in H2 without fully populated matrices ', blade_mass_H2noFPM)
     #     print('\nBlade mass in H2 without fully populated matrices and rigid ', blade_mass_H2noFPMrigid)
@@ -101,16 +101,5 @@ class TestBladeMass(unittest.TestCase):
     #     self.assertAlmostEqual(blade_mass_H2noFPMrigid/ref_blade_mass,1., places=3)
 
 
-def suite():
-    suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(TestBladeMass))
-    return suite
-
-
 if __name__ == "__main__":
-    result = unittest.TextTestRunner().run(suite())
-
-    if result.wasSuccessful():
-        exit(0)
-    else:
-        exit(1)
+    unittest.main()

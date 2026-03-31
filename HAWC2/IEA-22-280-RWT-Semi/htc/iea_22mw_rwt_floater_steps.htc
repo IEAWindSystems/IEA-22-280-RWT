@@ -198,7 +198,7 @@ begin new_htc_structure;
     type timoschenko;
     nbodies 1;
     node_distribution c2_def;
-    damping_posdef   0.0 0.0 0.0 0.00272819 0.00273093 0.00773657  ; tuned to 0.5% critical damping on first 2 modes	
+    damping_posdef   0.0 0.0 0.0 0.00197309 0.00197307 0.00889051  ; tuned to 0.5% critical damping on first 2 modes	
     begin timoschenko_input; 
       filename ./data/IEA-22MW_tower_st.dat;
       set 1 1;
@@ -206,36 +206,36 @@ begin new_htc_structure;
     begin c2_def; 
       nsec 31;
       sec 1 0.0 0.0 0.0 0.0;
-      sec 2 0.0 0.0 -3.1878898299999996 0.0;
-      sec 3 0.0 0.0 -8.22920397 0.0;
-      sec 4 0.0 0.0 -13.270518110000001 0.0;
-      sec 5 0.0 0.0 -18.311832260000003 0.0;
-      sec 6 0.0 0.0 -23.3531464 0.0;
-      sec 7 0.0 0.0 -28.394460549999998 0.0;
-      sec 8 0.0 0.0 -33.43577469 0.0;
-      sec 9 0.0 0.0 -38.47708883 0.0;
-      sec 10 0.0 0.0 -43.51840298 0.0;
-      sec 11 0.0 0.0 -48.55971712 0.0;
-      sec 12 0.0 0.0 -53.60103126999999 0.0;
-      sec 13 0.0 0.0 -58.642345410000004 0.0;
-      sec 14 0.0 0.0 -63.68365955 0.0;
-      sec 15 0.0 0.0 -68.7249737 0.0;
-      sec 16 0.0 0.0 -73.76628784 0.0;
-      sec 17 0.0 0.0 -78.80760199 0.0;
-      sec 18 0.0 0.0 -83.84891613 0.0;
-      sec 19 0.0 0.0 -88.89023027 0.0;
-      sec 20 0.0 0.0 -93.93154442 0.0;
-      sec 21 0.0 0.0 -98.97285856 0.0;
-      sec 22 0.0 0.0 -104.0141727 0.0;
-      sec 23 0.0 0.0 -109.05548685 0.0;
-      sec 24 0.0 0.0 -114.09680098999999 0.0;
-      sec 25 0.0 0.0 -119.13811514 0.0;
-      sec 26 0.0 0.0 -124.17942928 0.0;
-      sec 27 0.0 0.0 -129.22074342 0.0;
-      sec 28 0.0 0.0 -134.26205757 0.0;
-      sec 29 0.0 0.0 -139.30337171 0.0;
-      sec 30 0.0 0.0 -144.34468586 0.0;
-      sec 31 0.0 0.0 -149.386 0.0;
+      sec 2 0.0 0.0 -3.1884999999999999e+00 0.0;
+      sec 3 0.0 0.0 -8.2294999999999998e+00 0.0;
+      sec 4 0.0 0.0 -1.3271500000000000e+01 0.0;
+      sec 5 0.0 0.0 -1.8312500000000000e+01 0.0;
+      sec 6 0.0 0.0 -2.2352499999999999e+01 0.0;
+      sec 7 0.0 0.0 -2.7393500000000000e+01 0.0;
+      sec 8 0.0 0.0 -3.2435499999999998e+01 0.0;
+      sec 9 0.0 0.0 -3.7476500000000001e+01 0.0;
+      sec 10 0.0 0.0 -4.2517499999999998e+01 0.0;
+      sec 11 0.0 0.0 -4.7559500000000000e+01 0.0;
+      sec 12 0.0 0.0 -5.2600499999999997e+01 0.0;
+      sec 13 0.0 0.0 -5.7641500000000001e+01 0.0;
+      sec 14 0.0 0.0 -6.2683500000000002e+01 0.0;
+      sec 15 0.0 0.0 -6.7724500000000006e+01 0.0;
+      sec 16 0.0 0.0 -7.2765500000000003e+01 0.0;
+      sec 17 0.0 0.0 -7.7807500000000005e+01 0.0;
+      sec 18 0.0 0.0 -8.2848500000000001e+01 0.0;
+      sec 19 0.0 0.0 -8.7889499999999998e+01 0.0;
+      sec 20 0.0 0.0 -9.2931500000000000e+01 0.0;
+      sec 21 0.0 0.0 -9.7972499999999997e+01 0.0;
+      sec 22 0.0 0.0 -1.0301349999999999e+02 0.0;
+      sec 23 0.0 0.0 -1.0805450000000000e+02 0.0;
+      sec 24 0.0 0.0 -1.1309650000000001e+02 0.0;
+      sec 25 0.0 0.0 -1.1813750000000000e+02 0.0;
+      sec 26 0.0 0.0 -1.2317850000000000e+02 0.0;
+      sec 27 0.0 0.0 -1.2822049999999999e+02 0.0;
+      sec 28 0.0 0.0 -1.3326150000000001e+02 0.0;
+      sec 29 0.0 0.0 -1.3830250000000001e+02 0.0;
+      sec 30 0.0 0.0 -1.4334450000000001e+02 0.0;
+      sec 31 0.0 0.0 -1.4938600000000000e+02 0.0;
     end c2_def;
   end main_body;
   begin main_body; 
@@ -799,8 +799,8 @@ wind_ramp_abs        1150.0       1150.1     0.0     1.0;
   begin tower_shadow_potential_2; 
     tower_mbdy_link tower;
     nsec 2;
-    radius 0.0 5.0;  radius at base
-    radius 149.386  3.5;
+    radius 0.0 6.0;  radius at base
+    radius 149.386  3.0;
   end tower_shadow_potential_2;
 end wind;
 ;
@@ -809,8 +809,8 @@ begin aerodrag;   tower drag
     mbdy_name tower;
     aerodrag_sections uniform 10;
     nsec 2;
-    sec 0.0 10.0 0.5;
-    sec 149.386 7.0 0.5;
+    sec 0.0 12.0 0.5;
+    sec 149.386 6.0 0.5;
   end aerodrag_element;
   begin aerodrag_element; 
     mbdy_name connector;
@@ -1163,7 +1163,7 @@ begin dll;
     arraysizes_update 15 6;
     begin init;     Variables passed into initialization function
       constant 1 6.0; Tower radius at tower bottom [m]
-      constant 2 3.5; Tower radius at tower top [m]
+      constant 2 3.0; Tower radius at tower top [m]
       constant 3 3; Number of points to check [-]
     end init;
     begin output;    Variables passed into update function

@@ -728,9 +728,10 @@ components:
         spinner_gust_ws: 70.0
         hub_material: cast_iron
         spinner_material: glass_uniax
-        elastic_properties_mb:
-            system_mass: 120447.70224890654
-            system_inertia: [1882498.8832803261, 1198002.42618154, 1198002.42618154, 0.0, 0.0, 0.0]
+        elastic_properties:
+            mass: 122578.53995831522
+            inertia: [1916446.4655884118, 1218616.7387594716, 1218616.7387594716, 0.0, 0.0, 0.0]
+            location: [0.6596774438471478, 0.0, 0.0]
         cd: 0.5
     tower:
         outer_shape:
@@ -1118,6 +1119,17 @@ components:
             length: 3.047
             radius: 4.89
             mass: 508040.0
+            elastic_properties:
+                mass: 1269142.1515156208
+                inertia: [1439492.7568028048, 1210703.919458931, 1210703.919458931]
+                location: [2.5705]
+        elastic_properties:
+            mass: 1565246.0573682103
+            inertia: [7879464.992976278, 13805664.00701906, 13760725.222866781, 895374.0360722919, 3728621.677003672, -331117.91000210214]
+            inertia_tt: [40382417.22072738, 113661607.75713204, 81137518.30230355, -3.4924596548080444e-10, 50512766.23067972, 290709.0818100001]
+            location: [-6.5603272005118995, -0.08719596280566998, 4.556071947643628]
+            spring_constant: 12239370193.748405
+            damping_coefficient: 29559437.42328122
 airfoils:
    -  name: FFA-W3-211
       coordinates:
@@ -1833,5 +1845,3 @@ control:
     pitch_actuator_frequency: 6.2831
     pitch_actuator_damping: 0.707
     yaw_rate: 0.49847328176381617
-    max_allowable_blade_tip_speed: 105.0
-    peak_thrust_shaving: 0.8

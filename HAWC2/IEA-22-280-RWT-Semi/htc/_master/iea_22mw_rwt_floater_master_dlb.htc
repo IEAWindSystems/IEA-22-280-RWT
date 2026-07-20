@@ -437,8 +437,8 @@ begin ext_sys ;
   ndata 10  ;
   data nelem 100 ; 
   data mass 1007.4375 875.3624 ; 
-  data start_pos 0.0 -837.800000000000 200.0 ;
-  data end_pos 0.0 -0.799999999999955 200.0 ;
+  data start_pos 0.0 -837.8 200.0 ;
+  data end_pos 0.0 -0.8 200.0 ;
   data cdp_cdl_cm 184.5000 115.3125 10.5028 ; ; 0.5*rho*D*Cd_n 0.5*rho*D*Cd_a Cm*pi*(D/2)^2*(M_air-M_water)
   data axial_stiff 4.3234e+09 ;
   data read_write_initcond 1 0 ;
@@ -458,8 +458,8 @@ begin ext_sys ;
   ndata 10  ;
   data nelem 100 ; 
   data mass 1007.4375 875.3624 ; 
-  data start_pos 725.556100000000	418.900000000000 200.0 ;
-  data end_pos 133.707724146860 -172.948375853140	200.0 ;
+  data start_pos 725.5561 418.9 200.0 ;
+  data end_pos 0.692837032424905 0.4 200.0 ;
   data cdp_cdl_cm 184.5000 115.3125 10.5028 ; ; 0.5*rho*D*Cd_n 0.5*rho*D*Cd_a Cm*pi*(D/2)^2*(M_air-M_water)
   data axial_stiff 4.3234e+09 ;
   data read_write_initcond 1 0 ;
@@ -479,8 +479,8 @@ begin ext_sys ;
   ndata 10  ;
   data nelem 100 ; 
   data mass 1007.4375 875.3624 ;
-  data start_pos -725.556100000000 418.900000000000 200.0 ;
-  data end_pos -133.707724146860 -172.948375853140 200.0 ;
+  data start_pos -725.5561 418.9 200.0 ;
+  data end_pos -0.692837032424905 0.4 200.0 ;
   data cdp_cdl_cm 184.5000 115.3125 10.5028 ; ; 0.5*rho*D*Cd_n 0.5*rho*D*Cd_a Cm*pi*(D/2)^2*(M_air-M_water)
   data axial_stiff 4.3234e+09 ;
   data read_write_initcond 1 0 ;

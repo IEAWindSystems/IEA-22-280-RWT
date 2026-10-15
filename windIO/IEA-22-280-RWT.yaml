@@ -1300,8 +1300,8 @@ materials:
       ply_t: 0.0005
       waste: 0.25
       unit_cost: 7.23
-      Xt: 74000000.0
-      Xc: 87000000.0
+      Xt: 1.288E+08
+      Xc: 1.514E+08
       alpha: 0.0
       S: 21260000.0
       GIc: 303
@@ -1376,15 +1376,15 @@ materials:
       unit_cost: 0.5
    -  name: glass_uniax
       description: Vectorply E-LT-5500, Epikote MGS RIMR 135/Epicure MGS RIMH 1366 epoxy
-      source: MSU composites database 3D property tests, desrcibed in https://doi.org/10.5194/wes-7-19-2022
+      source: MSU composites database 3D property tests, listed in Table 1 of https://doi.org/10.5194/wes-7-19-2022. Strength properties are listed with no safety factor.
       orth: 1.0
       rho: 1940.0
       E: [43700000000.0, 16500000000.0, 15450000000.0]
       G: [3265000000.0, 3495000000.0, 3480000000.0]
       nu: [0.262, 0.264, 0.35]
-      Xt: [640230000.0, 38100000.0, 0.0]
-      Xc: [370690000.0, 82180000.0, 0]
-      S: [30170000.0, 18970000.0, 6210000.0]
+      Xt: [1.114E+09, 6.629E+07, 0.0]
+      Xc: [6.450E+08, 1.430E+08, 0]
+      S: [5.2495800e+7, 3.300780e+07, 1.080540e+07]
       m: 10
       GIc: 61.0
       GIIc: 101.0
@@ -1399,15 +1399,15 @@ materials:
       manufacturing_id: 5
    -  name: carbon_uniax
       description: Baseline industry CFRP tested by Sandia National Labs within the BAR Project
-      source: Described in https://doi.org/10.5194/wes-7-19-2022 and https://energy.sandia.gov/download/45350/, RVE analysis. Nominal E11 is 157.6 GPa, but it is reduced to 140 GPa to be more in line with the actual properties seen in real blades.
+      source: Described in https://doi.org/10.5194/wes-7-19-2022 and https://energy.sandia.gov/download/45350/, RVE analysis. Nominal E11 is 157.6 GPa, but it is reduced to 140 GPa to be more in line with the actual properties seen in real blades.Strength properties are listed with no safety factor.
       orth: 1.0
       rho: 1600.0
       E: [140000000000.0, 9100000000.0, 9100000000.0]
       G: [4131000000.0, 4131000000.0, 2689000000.0]
       nu: [0.3133, 0.3133, 0.47066]
-      Xt: [1285200000.0, 38100000.0, 0.0]
-      Xc: [878210000.0, 82180000.0, 0.0]
-      S: [30170000.0, 18970000.0, 6210000.0]
+      Xt: [2.236E+09, 6.629E+07, 0.0]
+      Xc: [1.528E+09, 1.430E+08, 0.0]
+      S: [5.2495800e+7, 3.300780e+07, 1.080540e+07]
       m: 16.1
       GIc: 0.0
       GIIc: 0.0
@@ -1421,16 +1421,16 @@ materials:
       area_density_dry: 6.230769230769231
       manufacturing_id: 4
    -  name: glass_biax
-      description: "(+-45)6 PPG-Devold DB810- E05\u2014a fabric infused with Epikote MGS RIMR 135/Epicure RIMH 1366 epoxy resin. todo update Xt once clarified with Sandia"
-      source: Described in https://doi.org/10.5194/wes-7-19-2022
+      description: (+-45)6 PPG-Devold DB810- E05 u2014a fabric infused with Epikote MGS RIMR 135/Epicure RIMH 1366 epoxy resin.
+      source: Described in https://doi.org/10.5194/wes-7-19-2022. Strength properties are listed with no safety factor. Xt11 is increased to 120.6 MPa given experimental evidence at DTU.
       orth: 1.0
       rho: 1940.0
       E: [11023100000.0, 11023100000.0, 16047700000.0]
       G: [13231400000.0, 3487480000.0, 3487480000.0]
       nu: [0.688074, 0.117173, 0.117173]
-      Xt: [69315000.0, 69315000.0, 69315000.0]
-      Xc: [70690000.0, 70690000.0, 70690000.0]
-      S: [124460000.0, 18970000.0, 6210000.0]
+      Xt: [1.206E+08, 1.206E+08, 1.206E+08]
+      Xc: [1.23E+08, 1.23E+08, 1.23E+08]
+      S: [2.165604e+08, 3.300780e+07, 1.080540e+07]
       m: 10
       GIc: 41.0
       GIIc: 170.0
@@ -1446,15 +1446,15 @@ materials:
       manufacturing_id: 3
    -  name: glass_triax
       description: "((\xB145)(0)2)s Saertex U14EU920-00940-T1300 and Saertex VU-90079-00830-01270\u2014fabrics infused with Vantico TDT 177-155."
-      source: Described in https://doi.org/10.5194/wes-7-19-2022
+      source: Described in https://doi.org/10.5194/wes-7-19-2022. Strength properties are listed with no safety factor.
       orth: 1.0
       rho: 1940.0
       E: [28211400000.0, 16238800000.0, 15835500000.0]
       G: [8248220000.0, 3491240000.0, 3491240000.0]
       nu: [0.497511, 0.18091, 0.27481]
-      Xt: [435630000.0, 76440000.0, 0]
-      Xc: [343100000.0, 174710000.0, 0]
-      S: [85060000.0, 18970000.0, 6210000.0]
+      Xt: [7.580E+08, 1.330E+08, 0]
+      Xc: [5.970E+08, 3.040E+08, 0]
+      S: [1.480044e+08, 3.300780e+07, 1.080540e+07]
       m: 10
       GIc: 41.0
       GIIc: 170.0
@@ -1470,15 +1470,15 @@ materials:
       manufacturing_id: 2
    -  name: medium_density_foam
       description: Airex C70.130 PVC Foam, source 'https://www.3accorematerials.com/uploads/documents/TDS-AIREX-C70-E_1106.pdf'
-      source: Described in https://doi.org/10.5194/wes-7-19-2022
+      source: Described in https://doi.org/10.5194/wes-7-19-2022. Strength properties are listed with no safety factor.
       orth: 0.0
       rho: 130.0
       E: 142500000.0
       G: 54000000.0
       nu: 0.3194
-      Xt: 2083000.0
-      Xc: 1563000.0
-      S: 1250000.0
+      Xt: 3.624E+06
+      Xc: 2.720E+06
+      S: 2175000.0
       GIc: 303.0
       GIIc: 3446.0
       alp0: 53.0
